@@ -1,0 +1,7 @@
+package fr.entity;
+
+public class Article {
+	
+	private String nomArticle;
+
+}

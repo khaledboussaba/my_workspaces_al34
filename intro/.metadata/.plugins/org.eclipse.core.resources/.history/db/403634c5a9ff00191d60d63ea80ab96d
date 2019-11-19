@@ -1,0 +1,20 @@
+package fr.afcepf.al34.demo.exeptions;
+
+public class ExempleExeptions {
+
+	public static void main(String[] args) {
+		
+		plop();
+
+	}
+	
+	public static void plop() {
+		plip(0);
+	}
+	
+	public static int plip(int x) {
+		int result = 42 / x;
+		return result;
+	}
+
+}

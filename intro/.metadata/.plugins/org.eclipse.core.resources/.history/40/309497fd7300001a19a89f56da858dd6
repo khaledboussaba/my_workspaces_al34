@@ -1,0 +1,11 @@
+package fr.afcepf.al34;
+
+public class Vehicle {
+
+	private String color;
+	private int length;
+	private int width;
+	
+	
+	
+}

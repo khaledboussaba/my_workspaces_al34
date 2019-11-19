@@ -1,0 +1,21 @@
+package fr.afcepf.al34.dem.jdbc;
+
+import java.io.InputStream;
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+public class DataSouceFactory {
+	
+	public static DataSource getDataSource() {
+		Properties props = new Properties();
+		MysqlDataSource ds = null;
+		
+		InputStream stream = DataSouceFactory.class.getClassLoader().getResourceAsStream("db.properties");
+		props.load(stream);
+		return ds;
+	}
+
+}

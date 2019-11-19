@@ -1,0 +1,22 @@
+package fr.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Panier {
+	
+	List<Article> articles = new ArrayList<Article>();
+	
+	public boolean ajouter(Article article) {
+		return articles.add(article);
+	}
+	
+	public boolean retirer(Article article) {
+		return articles.remove(article);
+	}
+	
+	public boolean retirerArticleParNom(String nomArticle) {
+		return articles.remove(article);
+	}
+
+}

@@ -1,0 +1,37 @@
+package fr.afcepf.al34.salaires.employes;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Employe vendeur = new Vendeur();
+		vendeur.nom = "KATZ";
+		vendeur.prenom = "AXEL";
+		vendeur.age = 35;
+		vendeur.chiffreAffaires = 2000;
+		System.out.println(vendeur.toString() + ", Salaire :  " + vendeur.calculerSalaire());
+		
+		Commercial representant = new Representant();
+		representant.nom = "POMA";
+		representant.prenom = "LIONEL";
+		representant.age = 30;
+		representant.chiffreAffaires = 2000;
+		System.out.println(representant.toString() + ", Salaire :  " + representant.calculerSalaire());
+		
+		Technicien tech = new Technicien();
+		tech.nom = "BOUSSABA";
+		tech.prenom = "KHALED";
+		tech.age = 29;
+		tech.nbUniteProduite = 200;
+		System.out.println(tech.toString() + ", Salaire :  " + tech.calculerSalaire());
+		
+		Technicien tech1 = new TechARisque();
+		tech1.nom = "De TOTO";
+		tech1.prenom = "TOTO";
+		tech1.age = 59;
+		tech1.nbUniteProduite = 200;
+		System.out.println(tech1.toString() + ", Salaire :  " + tech1.calculerSalaire());
+
+	}
+
+}

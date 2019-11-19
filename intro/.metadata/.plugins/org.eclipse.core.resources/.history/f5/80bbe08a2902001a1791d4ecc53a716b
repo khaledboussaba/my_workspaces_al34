@@ -1,0 +1,5 @@
+#mysql DB properties
+driverClassName=com.mysql.jdbc.Driver
+jndiPath=jdbc:mysql://127.0.0.1:3306/cat_db?serverTimezone=UTC&verifyServerCertificate=false&useSSL=true
+username=root
+password=root

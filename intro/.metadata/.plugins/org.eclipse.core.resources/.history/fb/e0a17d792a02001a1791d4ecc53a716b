@@ -1,0 +1,11 @@
+package fr.afcepf.al34.dem.jdbc;
+
+import javax.sql.DataSource;
+
+public class DataSouceFactory {
+	
+	public static DataSource getDataSource() {
+		
+	}
+
+}

@@ -1,0 +1,36 @@
+package fr.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MaServ1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("Je suis dans MaServ1");
+		
+		System.out.println(request.getParameter("leNom"));
+		
+		String n = request.getParameter("leNom");
+		/*
+		PrintWriter sortie = response.getWriter();
+		
+		sortie.println("<html>");
+		sortie.println("<body>");
+		sortie.println("<h1>");
+		sortie.println("Coucou, on est arrivé " + n);
+		sortie.println("</h1>");
+		sortie.println("</body>");
+		sortie.println("</html>");
+		*/
+
+		getServletContext().getRequestDispatcher("/page2.jsp").forward(request, response);
+	}
+
+}

@@ -1,0 +1,24 @@
+package fr.afcepf.al34.business;
+
+import fr.afcepf.al34.authenticator.AuthenticationManager;
+import fr.afcepf.al34.authenticator.Credentials;
+import fr.afcepf.al34.authenticator.exceptions.AuthenticationException;
+import fr.afcepf.al34.dao.UserDao;
+import fr.afcepf.al34.entities.User;
+
+public class UserBusiness {
+
+	public void createAccount(User user, String clearPassword) {
+		Credentials credentials = new Credentials(user.getLogin());
+		try {
+			AuthenticationManager.initializeCredentials(clearPassword, credentials);
+			user.setHashedPassword(credentials.getHashedPassword());
+			user.setSalt(credentials.getSalt());
+			UserDao dao = new UserDao();
+			dao.insert(user);
+		} catch (AuthenticationException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}

@@ -1,0 +1,11 @@
+package fr.afcepf.al34.salaires.employes;
+
+
+import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
+@objid ("59e09494-bc4b-45c1-bfec-ddfbd45500da")
+public abstract class Commercial extends Employe {
+    @objid ("71da7fcb-91d9-43b6-918d-ace26f420c66")
+    protected double chiffreAffaires;
+
+}

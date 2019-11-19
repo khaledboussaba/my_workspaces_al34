@@ -1,0 +1,24 @@
+package fr.afcepf.al34.salaires.employes;
+
+import java.util.ArrayList;
+import java.util.List;
+import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
+@objid ("c6e49df3-d7bd-44fb-86e4-e7fe0df8adfc")
+public class Personnel {
+    @objid ("4bc947b8-0ac1-46cb-814e-6ec66805a83e")
+    public List<Employe> employes = new ArrayList<Employe> ();
+
+    @objid ("7e019170-0041-45d6-831f-a57fc4258a35")
+    public void ajouterEmploye(Employe employe) {
+    }
+
+    @objid ("95d3e751-da6d-4a62-a47d-b9362568443c")
+    public void calculerSalaire() {
+    }
+
+    @objid ("dd5dc1bb-bdd1-447b-95e9-5eb7c137b10d")
+    public double salaireMoyen() {
+    }
+
+}

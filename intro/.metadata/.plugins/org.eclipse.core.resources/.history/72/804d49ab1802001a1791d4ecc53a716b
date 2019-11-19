@@ -1,0 +1,12 @@
+package fr.afcepf.al34.adopt.dog.business;
+
+public class UserBusiness {
+
+	public void connect(String login, String clearPassword) {
+		
+	}
+	
+	public void createAccount() {
+		
+	}
+}

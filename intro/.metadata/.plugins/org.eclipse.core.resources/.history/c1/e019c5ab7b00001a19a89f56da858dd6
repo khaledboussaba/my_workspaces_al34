@@ -1,0 +1,23 @@
+package fr.afcepf.al34;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		Vehicle v;
+		
+		v = new Vehicle();
+		v.moveForward();
+		System.out.println(v.getSpeed());
+		
+		v = new Car();
+		v.moveForward();
+		System.out.println(v.getSpeed());
+		
+		v = new Baot();
+		v.moveForward();
+		System.out.println(v.getSpeed());
+		
+	}
+
+}

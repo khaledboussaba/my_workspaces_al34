@@ -1,0 +1,8 @@
+package fr.entity;
+
+public class Article {
+	
+	private String intitule;
+	private double prix;
+
+}

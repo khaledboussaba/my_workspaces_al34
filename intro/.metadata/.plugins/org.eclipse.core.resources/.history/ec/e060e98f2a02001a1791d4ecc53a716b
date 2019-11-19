@@ -1,0 +1,13 @@
+package fr.afcepf.al34.dem.jdbc;
+
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
+public class DataSouceFactory {
+	
+	public static DataSource getDataSource() {
+		Properties props = new Properties();
+	}
+
+}

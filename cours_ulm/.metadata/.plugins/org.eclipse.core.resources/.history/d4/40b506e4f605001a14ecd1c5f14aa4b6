@@ -1,0 +1,15 @@
+package fr.afcepf.al34.salaires.employes;
+
+import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
+@objid ("0bb99f44-e736-4802-9801-69fbdc1758b0")
+public class Representant extends Commercial {
+    @objid ("cc5d78e2-434e-415f-8eb4-c878882fe607")
+    private static final double POURCENTAGE_REPRESENTANT = 0.25;
+
+    @objid ("66cd2c6c-1a5e-4ab8-b238-548035fd584c")
+    public double calculerSalaire() {
+    	return super.chiffreAffaires * POURCENTAGE_REPRESENTANT;
+    }
+
+}

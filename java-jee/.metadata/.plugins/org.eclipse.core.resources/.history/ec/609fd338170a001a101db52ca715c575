@@ -1,0 +1,10 @@
+package fr.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Factory {
+
+	Map<String, String> factory = new HashMap<String, String>();
+	
+}

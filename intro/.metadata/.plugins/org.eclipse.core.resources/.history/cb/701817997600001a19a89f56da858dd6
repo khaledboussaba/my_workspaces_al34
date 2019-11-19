@@ -1,0 +1,11 @@
+package fr.afcepf.al34;
+
+public class Baot extends Vehicle {
+	
+	private int draft;
+	
+	public void sink() {
+		System.out.println("Blupblupblupblup ......");
+	}
+
+}

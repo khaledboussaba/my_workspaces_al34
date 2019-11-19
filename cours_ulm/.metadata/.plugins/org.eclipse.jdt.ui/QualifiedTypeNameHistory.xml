@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.xml.parsers.FactoryConfigurationError"/>
+<fullyQualifiedTypeName name="fr.afcepf.al34.salaires.employes.Vendeur"/>
+<fullyQualifiedTypeName name="fr.afcepf.al34.salaires.employes.Commercial"/>
+<fullyQualifiedTypeName name="fr.afcepf.al34.salaires.employes.Representant"/>
+<fullyQualifiedTypeName name="fr.afcepf.al34.salaires.employes.TechARisque"/>
+<fullyQualifiedTypeName name="fr.afcepf.al34.salaires.employes.Technicien"/>
+<fullyQualifiedTypeName name="fr.afcepf.al34.salaires.employes.Employe"/>
+<fullyQualifiedTypeName name="fr.afcepf.al34.salaires.employes.Personnel"/>
+</qualifiedTypeNameHistroy>

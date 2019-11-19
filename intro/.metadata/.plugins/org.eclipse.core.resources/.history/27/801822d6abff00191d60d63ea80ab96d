@@ -1,0 +1,35 @@
+package fr.afcepf.al34.demo.exeptions;
+
+public class ExempleExeptions {
+
+	public static void main(String[] args) {
+		System.out.println("Début");
+		
+		try {
+			plop();			
+		} catch (NullPointerException e) {
+			System.out.println("OUPS : " + e.getMessage());
+			System.out.println("--------Stack trace--------");
+			e.printStackTrace(System.out);
+			System.out.println("--------Stack trace--------");
+		}catch (ArithmeticException e) {
+			System.out.println("OUPS : " + e.getMessage());
+			System.out.println("--------Stack trace--------");
+			e.printStackTrace(System.out);
+			System.out.println("--------Stack trace--------");
+		}
+		
+		System.out.println("Fin");
+	}
+	
+	public static void plop() {
+		plip(0, null);
+	}
+	
+	public static int plip(int x, Voiture v) {
+		v.accelerer(2);
+		int result = 42 / x;
+		return result;
+	}
+
+}

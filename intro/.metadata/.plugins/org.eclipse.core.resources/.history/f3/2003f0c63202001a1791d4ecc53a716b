@@ -1,0 +1,21 @@
+package fr.afcepf.al34.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import fr.afcepf.al34.entities.User;
+
+public class UserDao extends AbstracDao {
+
+	public void insert(User user) {
+
+		try (Connection cnx = dataSource.getConnection()) {
+			PreparedStatement pstm = cnx.prepareStatement("");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

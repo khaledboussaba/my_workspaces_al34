@@ -1,0 +1,14 @@
+package fr.afcepf.al34.business;
+
+import fr.afcepf.al34.authenticator.AuthenticationManager;
+import fr.afcepf.al34.authenticator.Credentials;
+import fr.afcepf.al34.entities.User;
+
+public class UserBusiness {
+
+	public void createAccount(User user, String clearPassword) {
+		Credentials credentials = new Credentials(user.getLogin();
+		AuthenticationManager.initializeCredentials(clearPassword, credentials);
+	}
+	
+}

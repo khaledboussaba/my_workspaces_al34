@@ -1,0 +1,25 @@
+package fr.listener;
+
+import java.util.logging.Logger;
+
+import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+
+@WebListener
+public class SessionListener implements HttpSessionListener {
+
+	private static final Logger LOG = Logger.getLogger("SessionListener");
+	
+	private int sessionCounter = 0;
+	
+    public void sessionCreated(HttpSessionEvent se)  { 
+         // TODO Auto-generated method stub
+    }
+
+    public void sessionDestroyed(HttpSessionEvent se)  { 
+         // TODO Auto-generated method stub
+    }
+	
+}

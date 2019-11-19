@@ -1,0 +1,56 @@
+package fr.afcepf.al34.adopt.dog.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import fr.afcepf.al34.adopt.dog.entities.User;
+import fr.afcepf.al34.authenticator.AuthenticationManager;
+import fr.afcepf.al34.authenticator.Credentials;
+
+public class UserDao {
+	
+	static {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	Connection connection = null;
+	
+	private static final String URL = "jdbc:mysql://localhost:3306/adopte_un_chien?serverTimezone=UTC";
+	private static final String LOGIN = "root";
+	private static final String PASSWORD = "root";
+	
+	private static final String REQ_ADD = "INSERT INTO user (last_name, first_name, email, login, hashed_password, salt) "
+										+ "VALUES (?, ?, ?, ?, ?, ?)";
+
+	public void insert(User user) {
+		AuthenticationManager.initializeCredentials(user.getHashPassword(), new Credentials(user.getLogin());
+		try {
+			connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
+			
+			PreparedStatement pstm = connection.prepareStatement(REQ_ADD);
+			pstm.setString(1, user.getLastName());
+			pstm.setString(2, user.getFirstName());
+			pstm.setString(3, user.getEmail());
+			pstm.setString(4, user.getLogin());
+			pstm.setString(5, user.getHashPassword());
+			pstm.setString(6, user.getSalt());
+			
+			pstm.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+}

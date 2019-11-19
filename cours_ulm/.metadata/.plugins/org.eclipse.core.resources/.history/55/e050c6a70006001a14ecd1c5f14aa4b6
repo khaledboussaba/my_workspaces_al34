@@ -1,0 +1,28 @@
+package fr.afcepf.al34.salaires.employes;
+
+import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
+@objid ("121acaf3-8a23-4654-a17a-73a054cd1aa6")
+public class Technicien extends Employe {
+    @objid ("bfcde219-0fd4-4ad8-bdef-40e6511a5c9f")
+    protected int nbUniteProduite;
+
+    @objid ("0d080264-657b-499b-a6b3-0a5d4c9ff57c")
+    private static final int FACTEUR_UNITE = 5;
+
+    @objid ("cbe14f97-dd9a-4dfc-8646-310a0ef3b5f9")
+    public double calculerSalaire() {
+    	return nbUniteProduite * FACTEUR_UNITE;
+    }
+    
+    @Override
+	public String getTitre() {
+		return "Technicien : ";
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+
+}

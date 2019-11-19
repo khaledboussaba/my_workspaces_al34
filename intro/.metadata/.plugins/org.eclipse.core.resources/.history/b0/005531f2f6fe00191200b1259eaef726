@@ -1,0 +1,18 @@
+package fr.afcepf.al34.demo.vehicules;
+
+public class App {
+
+	public static void main(String[] args) {
+
+		//déclaration d'une variable:
+		Voiture v;
+		//affectation d'une nouvelle instance
+		v = new Voiture();
+		
+		v.setCylindree(1000);
+		
+		v.accelerer(42);
+		
+	}
+
+}

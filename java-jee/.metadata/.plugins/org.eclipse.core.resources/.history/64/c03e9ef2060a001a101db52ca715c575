@@ -1,0 +1,41 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Saisie</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<form class="container" action="deAffiche.toto" method="post">
+		<div class="form-group">
+			<label for="nom">Nom : </label> 
+			<input type="text" class="form-control" id="nom" placeholder="name" name="nom">
+		</div>
+		<div class="form-group">
+			<label for="prenom">Prénom : </label> 
+			<input type="text" class="form-control" id="prenom" placeholder="filst name" name="prenom">
+		</div>
+		<div class="form-group">
+			<label for="coursSuivis">Cours suivis : </label>
+			
+			<select multiple class="form-control" id="coursSuivis" name="coursSuivis" multiple="multiple">
+				<option value="Java">Java</option>
+				<option value="Struts">Struts</option>
+				<option value="JEE">JEE</option>
+				<option value="UML">UML</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="autreCours">Cours que vous aimeriez suivre : </label>
+			<textarea class="form-control" id="autreCours" name="autreCours" rows="3" placeholder="Ex: Xml, Jstl ..."></textarea>
+		</div>
+		
+		<input type="submit" value="Valider" class="btn btn-success">
+		<input type="submit" value="Remmetre à zéro" class="btn btn-primary">
+		
+	</form>
+
+</body>
+</html>

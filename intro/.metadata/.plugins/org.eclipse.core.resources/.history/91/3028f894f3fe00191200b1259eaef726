@@ -1,0 +1,33 @@
+package fr.afcepf.al34.demo.vehicules;
+
+public class Voiture {
+
+	//qualified name: fr.afcepf.al34.demo.vehicules.Voiture
+	
+	private String couleur;
+	private int cylindree;
+	private int puissance;
+	private int vitesseCourante;
+	private boolean isManual;
+	
+	
+	public void accelerer(int niveau) {
+		
+	}
+
+
+	public String getCouleur() {
+		return couleur;
+	}
+
+
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+
+
+	public int getCylindree() {
+		return cylindree;
+	}
+		
+}

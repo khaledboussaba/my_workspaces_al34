@@ -1,0 +1,14 @@
+package fr.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Panier {
+	
+	List<Article> articles = new ArrayList<Article>();
+	
+	public void ajouter(Article article) {
+		articles.add(article);
+	}
+
+}

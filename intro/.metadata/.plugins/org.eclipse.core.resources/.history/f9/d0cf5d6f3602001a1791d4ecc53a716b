@@ -1,0 +1,20 @@
+package fr.afcepf.al34.presentation;
+
+import fr.afcepf.al34.entities.User;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		User user = new User();
+		
+		user.setFirstName("Khaled");
+		user.setLastName("BOUSSABA");
+		user.setEmail("khaled@gmail.com");
+		user.setLastName("kboussaba");
+		
+		String pwd = "soleil";
+		
+	}
+	
+}

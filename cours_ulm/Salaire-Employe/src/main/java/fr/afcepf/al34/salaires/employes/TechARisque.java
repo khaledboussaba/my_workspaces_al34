@@ -1,0 +1,17 @@
+package fr.afcepf.al34.salaires.employes;
+
+import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
+@objid ("f31c0667-40b9-47f4-b81e-ee59b07ad65d")
+public class TechARisque extends Technicien implements ARisque {
+    @objid ("6293f7b3-c0e6-4675-8f93-af545c5e54e0")
+    public double calculerSalaire() {
+		return super.calculerSalaire() + PRIME_RISQUE;
+    }
+    
+    @Override
+	public String getTitre() {
+		return "Technicien à risque : ";
+	}
+
+}

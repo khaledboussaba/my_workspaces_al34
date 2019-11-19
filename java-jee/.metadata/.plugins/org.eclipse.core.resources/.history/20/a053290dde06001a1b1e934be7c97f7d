@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Page 1</title>
+	</head>
+	<body>
+		<h3>coucou</h3>
+		
+		<form action="ActionToto" method="post">
+			<input type="text" name="leNom">
+			<input type="submit">
+		</form>
+		
+	</body>
+</html>

@@ -1,0 +1,11 @@
+package fr.afcepf.al34.adopt.dog.entities;
+
+public class User {
+
+	private int id;
+	private String firstName;
+	private String lastName;
+	private String hashPassword;
+	private String salt;
+	
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1572864565178_0" label="Java Main Sources" name="Java Main Sources">
+<item elementID="=DemoObjet/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=AuthenticationAL/src" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.internal.ui.DynamicSourcesWorkingSet" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1572864565193_1" label="Java Test Sources" name="Java Test Sources"/>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1573221626403_3" label="adopt-a-dog-project" name="adopt-a-dog-project">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/adopt-a-dog-v1-business" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/adopt-a-dog-v1" type="4"/>
+<item elementID="=adopt-a-dog-v1-entities" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=adopt-a-dog-v1-dao" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Authenticator" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=adopt-a-dog-v1-presentation" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1572864578221_2" label="Window Working Set" name="Aggregate for window 1572864578221"/>
+<mruList name="adopt-a-dog-project"/>
+</workingSetManager>

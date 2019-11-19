@@ -1,0 +1,13 @@
+package fr.afcepf.al34.demo.vehicules;
+
+public class Voiture {
+
+	//qualified name: fr.afcepf.al34.demo.vehicules.Voiture
+	
+	private String couleur;
+	private int cylindree;
+	private int puissance;
+	private int vitesseCourante;
+	private boolean isManual;
+	
+}

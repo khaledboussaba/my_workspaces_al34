@@ -1,0 +1,7 @@
+package fr.afcepf.al34;
+
+public interface IFlyable {
+	
+	void fly();
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;db.properties&apos; to &apos;adopt-a-dog-v1-dao/src/main/resources&apos;&#x0D;&#x0A;- Original project: &apos;adopt-a-dog&apos;&#x0D;&#x0A;- Destination element: &apos;adopt-a-dog-v1-dao/src/main/resources&apos;&#x0D;&#x0A;- Original element: &apos;db.properties&apos;" description="Copy file" destination="=adopt-a-dog-v1-dao/src\/main\/resources" element1="src/main/resources/db.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1573222051322" units="0" version="1.0"/>
+</session>

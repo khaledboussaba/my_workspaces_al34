@@ -1,0 +1,10 @@
+package fr.afcepf.al34;
+
+public class Avion extends Vehicle {
+
+	@Override
+	public boolean isTerrestrial() {
+		return true;
+	}
+
+}

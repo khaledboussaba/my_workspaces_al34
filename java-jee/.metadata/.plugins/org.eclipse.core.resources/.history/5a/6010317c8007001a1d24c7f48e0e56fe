@@ -1,0 +1,10 @@
+package fr.entity;
+
+public class Exemple {
+
+	
+	public void rien() {
+		Panier p = new Panier();
+	}
+	
+}

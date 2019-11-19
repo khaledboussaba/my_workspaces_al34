@@ -1,0 +1,30 @@
+package fr.afcepf.al34.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import fr.afcepf.al34.entities.User;
+
+public class UserDao extends AbstracDao {
+	
+	public void insert(User user) {
+		
+		String req = "INSERT INTO user (last_name, first_name, email, login, hashed_password, salt) "
+				+ "VALUES (?, ?, ?, ?, ?, ?)";
+		
+		try (Connection cnx = dataSource.getConnection()) {
+			PreparedStatement pstm = cnx.prepareStatement(req);
+			pstm.setString(1, user.getLogin());
+			pstm.setString(2, x);
+			pstm.setString(3, x);
+			pstm.setString(4, x);
+			pstm.setString(5, x);
+			pstm.setString(6, x);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

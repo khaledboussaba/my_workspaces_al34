@@ -1,0 +1,11 @@
+package fr.entity;
+
+import java.util.ArrayList;
+
+public class Candidat {
+	
+	private String nom;
+	private String prenom;
+	private ArrayList<String> coursSuivis = new ArrayList<String>();
+
+}

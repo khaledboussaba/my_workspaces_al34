@@ -1,0 +1,71 @@
+package fr.afcepf.al34.demo.vehicules;
+
+public class Voiture {
+
+	// qualified name: fr.afcepf.al34.demo.vehicules.Voiture
+
+	// Attributs
+	private String couleur;
+	private int cylindree;
+	private int puissance;
+	private int vitesseCourante;
+	private boolean manual;
+	
+	//Constructeur
+	public Voiture() {
+		manual = true;
+		couleur = "blanche";
+	}
+	
+	public Voiture(String couleur) {
+		this.couleur = couleur;
+	}
+	
+	public Voiture(String couleur, int puissance, int cylindree) {
+		this.couleur = couleur;
+		this.puissance = puissance;
+		this.cylindree = cylindree;
+	}
+
+	// Méthodes
+	public void accelerer(int niveau) {
+		vitesseCourante += (cylindree + puissance) * niveau;
+	}
+	
+	public String getCouleur() {
+		return couleur;
+	}
+	
+	public void setCouleur(String couleur) {
+		this.couleur = couleur;
+	}
+
+	public int getCylindree() {
+		return cylindree;
+	}
+
+	public void setCylindree(int cylindree) {
+		this.cylindree = cylindree;
+	}
+
+	public int getPuissance() {
+		return puissance;
+	}
+
+	public void setPuissance(int puissance) {
+		this.puissance = puissance;
+	}
+
+	public boolean isManual() {
+		return manual;
+	}
+
+	public void setManual(boolean manual) {
+		this.manual = manual;
+	}
+
+	public int getVitesseCourante() {
+		return vitesseCourante;
+	}
+
+}

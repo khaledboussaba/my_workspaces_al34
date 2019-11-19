@@ -1,0 +1,9 @@
+package fr.afcepf.al34.dao;
+
+import javax.sql.DataSource;
+
+public abstract class AbstracDAO {
+
+	private DataSource ds;
+	
+}

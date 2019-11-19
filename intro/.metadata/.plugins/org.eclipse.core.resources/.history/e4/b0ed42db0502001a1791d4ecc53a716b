@@ -1,0 +1,13 @@
+package fr.afcepf.al34.adopt.dog.test;
+
+import fr.afcepf.al34.adopt.dog.dao.UserDao;
+import fr.afcepf.al34.adopt.dog.entities.User;
+
+public class App {
+	
+	public static void main(String[] args) {
+		User user = new User("Khaled", "BOUSSABA", "kboussaba", "khaledboussaba@gmail.com", "toto", "titi");
+		UserDao dao = new UserDao();
+	}
+
+}

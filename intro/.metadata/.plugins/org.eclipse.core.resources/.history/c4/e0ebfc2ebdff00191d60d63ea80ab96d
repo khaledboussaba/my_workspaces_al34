@@ -1,0 +1,15 @@
+package fr.afcepf.al34.authentication.tester;
+
+import fr.afcepf.al34.authentication.AuthenticationManager;
+import fr.afcepf.al34.authentication.Credentials;
+
+public class Test {
+
+	public static void main(String[] args) throws Exception {
+		
+		AuthenticationManager.initializeCredentials("soleil", new Credentials("toto"));
+		AuthenticationManager.initializeCredentials("soleil", new Credentials("jane"));
+		
+	}
+	
+}

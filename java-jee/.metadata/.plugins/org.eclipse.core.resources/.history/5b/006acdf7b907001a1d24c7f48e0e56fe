@@ -1,0 +1,50 @@
+<%@page import="fr.entity.Panier"%>
+<%@page import="fr.entity.Article"%>
+<%@page import="java.util.List"%>
+<%@page import="fr.entity.Login"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<<jsp:useBean id="login.getName" class="Login" scope="session"></jsp:useBean>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+	<h5 style="margin-left: 85em;">${ login.getName() }</h5>
+
+	<a href="login.jsp">Déconnexion</a>
+
+
+	<h3>Voici la liste de vos article</h3>
+
+	<%
+		Panier panier = (Panier) session.getAttribute("panier");
+		List<Article> articles = panier.getArticles();
+		if (articles.size() == 0) {
+			out.print("Aucun article à afficher");
+		} else {
+			out.print("<table class=\"table table-bordered\">");
+			out.print(
+					"<thead><tr><th scope=\"col\">Intitulé</th><th scope=\"col\">Prix</th><th scope=\"col\">Supprimer</th></tr></thead>");
+			for (Article article : articles) {
+				out.print("<tbody><tr><td>" + article.getIntitule() + "</td><td>" + article.getPrix()
+						+ "</td><td><button action=\"submit\" name=\"button\" value=\"" + article.getIntitule()
+						+ "\" class=\"btn btn-danger\"></button></td></tr></tbody>");
+				//out.println(article.getIntitule() + " " + article.getPrix() + "<br>");
+			}
+			out.print("</table\">");
+		}
+	%>
+
+	<br>
+	<a href="ajouterArticle.jsp" type="button" class="btn btn-primary">Ajouter
+		article</a>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+package fr.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Panier {
+	
+	List<Article> articles = new ArrayList<Article>();
+	
+	public boolean ajouter(Article article) {
+		return articles.add(article);
+	}
+	
+	public boolean retirer(Article article) {
+		return articles.remove(article);
+	}
+	
+	public void retirerArticleParNom(String intitule) {
+		articles.removeIf(x -> intitule.equals(x.getIntitule()));
+	}	
+	
+	public void afficher() {
+		
+	}
+	
+	public Article findByIntitue(String intitule) {
+		// TODO
+		Article articleRecherche = new Article();
+		for (Article article : articles) {
+			if (article.getIntitule().equals(intitule)) {
+				articleRechere =  article;
+			}
+		}
+		return null;				
+	}
+
+	public List<Article> findByPrixInf(double prix) {
+		List<Article> articles = new ArrayList<Article>();
+		for (Article article : articles) {
+			if (article.getPrix() < prix) {
+				articles.add(article);
+			}
+		}
+		return articles;
+	}
+	
+}

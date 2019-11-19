@@ -1,0 +1,28 @@
+package fr.afcepf.al34.dem.jdbc;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+public class DataSouceFactory {
+
+	public static DataSource getDataSource() {
+		MysqlDataSource ds = null;
+
+		try {
+			InputStream stream = DataSouceFactory.class.getClassLoader().getResourceAsStream("db.properties");
+			Properties props = new Properties();
+			props.load(stream);
+			ds = new MysqlDataSource();
+			ds.setURL(props.getProperty("MYSQL_DB_URL"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return ds;
+	}
+
+}

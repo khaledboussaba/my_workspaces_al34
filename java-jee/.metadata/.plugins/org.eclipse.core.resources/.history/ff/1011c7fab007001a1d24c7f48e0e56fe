@@ -1,0 +1,23 @@
+package fr.listener;
+
+import java.util.logging.Logger;
+
+import javax.servlet.ServletRequestEvent;
+import javax.servlet.ServletRequestListener;
+import javax.servlet.annotation.WebListener;
+
+@WebListener
+public class RequestListener implements ServletRequestListener {
+
+	private static final Logger LOG = Logger.getLogger("SessionListener");
+
+	public void requestInitialized(ServletRequestEvent sre)  { 
+		// TODO Auto-generated method stub
+	}
+	
+    public void requestDestroyed(ServletRequestEvent sre)  { 
+         // TODO Auto-generated method stub
+    }
+
+	
+}

@@ -1,0 +1,15 @@
+2019-11-08 10:25:13,439 INFO f.a.a.a.AuthenticationManager [main] Salt created is : 26\\l0
+2019-11-08 10:25:13,441 DEBUG f.a.a.a.AuthenticationManager [main] ClearPassword after adding salt : toto26\\l0
+2019-11-08 10:25:13,441 DEBUG f.a.a.a.AuthenticationManager [main] Hash generated : a35fc3deeb8639ab6493e08ecea63b5f0148616a21d656449d78b599109e2280
+2019-11-08 10:25:48,856 INFO f.a.a.a.AuthenticationManager [main] Salt created is : Tr:kbw
+2019-11-08 10:25:48,859 DEBUG f.a.a.a.AuthenticationManager [main] ClearPassword after adding salt : totoTr:kbw
+2019-11-08 10:25:48,859 DEBUG f.a.a.a.AuthenticationManager [main] Hash generated : b79be508f0a6cb5abe86085361d4a4b2187a9696086363ae3dfd207a02a403eb
+2019-11-08 10:28:17,072 INFO f.a.a.a.AuthenticationManager [main] Salt created is : qac;4T
+2019-11-08 10:28:17,102 DEBUG f.a.a.a.AuthenticationManager [main] ClearPassword after adding salt : totoqac;4T
+2019-11-08 10:28:17,102 DEBUG f.a.a.a.AuthenticationManager [main] Hash generated : 911996a5e222bd37c45aa3cfdc0c894c6919fcdf486aa5e77ab3858688aeda99
+2019-11-08 11:27:14,398 INFO f.a.a.a.AuthenticationManager [main] Salt created is : @5>4Ux
+2019-11-08 11:27:14,401 DEBUG f.a.a.a.AuthenticationManager [main] ClearPassword after adding salt : treddfg@5>4Ux
+2019-11-08 11:27:14,401 DEBUG f.a.a.a.AuthenticationManager [main] Hash generated : def2d7b1abf524f4d4ac5e10b31287104906d0e8bc107e925c2fb868f4f45654
+2019-11-08 11:40:25,019 INFO f.a.a.a.AuthenticationManager [main] Salt created is : YTayhP
+2019-11-08 11:40:25,022 DEBUG f.a.a.a.AuthenticationManager [main] ClearPassword after adding salt : khaledboussabaYTayhP
+2019-11-08 11:40:25,023 DEBUG f.a.a.a.AuthenticationManager [main] Hash generated : 7dc90084f941e8cdd75dd5836d3ec6cad3cff3c0732c5da8412fa7502d9b608a

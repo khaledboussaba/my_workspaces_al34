@@ -1,0 +1,8 @@
+import com.modeliosoft.modelio.javadesigner.annotations.objid;
+
+@objid ("c6a82034-1905-4971-9e9d-f633c8279a70")
+public interface ARisque {
+    @objid ("517fa7a5-0b41-4953-95b5-8055f4f6bb1e")
+    public static final int PRIME_RISQUE = 100;
+
+}

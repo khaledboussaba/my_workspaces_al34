@@ -1,0 +1,15 @@
+2019-11-05 15:46:09,446 DEBUG f.a.a.d.m.App [main] Ceci est un message de debug
+2019-11-05 15:46:09,448 INFO f.a.a.d.m.App [main] Ceci est une info
+2019-11-05 15:46:09,448 WARN f.a.a.d.m.App [main] Ceci est une warning
+2019-11-05 15:46:09,448 ERROR f.a.a.d.m.App [main] Ceci est une erreur
+2019-11-05 15:46:09,448 FATAL f.a.a.d.m.App [main] Ceci est une erreur fatale !
+2019-11-05 15:47:54,500 DEBUG f.a.a.d.m.App [main] Ceci est un message de debug
+2019-11-05 15:47:54,502 INFO f.a.a.d.m.App [main] Ceci est une info
+2019-11-05 15:47:54,502 WARN f.a.a.d.m.App [main] Ceci est une warning
+2019-11-05 15:47:54,502 ERROR f.a.a.d.m.App [main] Ceci est une erreur
+2019-11-05 15:47:54,502 FATAL f.a.a.d.m.App [main] Ceci est une erreur fatale !
+2019-11-05 15:47:56,326 DEBUG f.a.a.d.m.App [main] Ceci est un message de debug
+2019-11-05 15:47:56,328 INFO f.a.a.d.m.App [main] Ceci est une info
+2019-11-05 15:47:56,328 WARN f.a.a.d.m.App [main] Ceci est une warning
+2019-11-05 15:47:56,328 ERROR f.a.a.d.m.App [main] Ceci est une erreur
+2019-11-05 15:47:56,328 FATAL f.a.a.d.m.App [main] Ceci est une erreur fatale !

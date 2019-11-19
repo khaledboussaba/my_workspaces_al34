@@ -1,0 +1,5 @@
+package fr.afcepf.al34.dao;
+
+public class AbstracDAO {
+
+}

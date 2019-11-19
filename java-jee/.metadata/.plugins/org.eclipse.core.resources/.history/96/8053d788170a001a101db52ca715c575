@@ -1,0 +1,17 @@
+package fr.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Factory {
+
+	Map<String, String> factory = new HashMap<String, String>();
+	
+	public Factory() {
+		// remplir la map à partir d'un fichier xml
+		factory.put("/index.jsp", "fr.controller.ActionIndex");
+		factory.put("/deSaisie.toto", "fr.controller.ActionSaisie");
+		factory.put("/deAffiche.toto", "fr.controller.ActionAffiche");
+	}
+	
+}

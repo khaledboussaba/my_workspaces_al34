@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\workspaces\java-jee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2136643073.index
+\exemple2\src
+C:\workspaces\java-jee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\147080433.index
+\exemple1\src
+C:\workspaces\java-jee\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1722330813.index
+\jstl\src

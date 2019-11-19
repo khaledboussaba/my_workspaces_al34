@@ -1,0 +1,17 @@
+package fr.afcepf.al34.dem.jdbc;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Testeur testeur = new Testeur();
+		
+		testeur.tester1();
+		
+		System.out.println("--------------------------------------");
+		
+		testeur.tester2("ZERO", "CAGE");
+		
+	}
+	
+}

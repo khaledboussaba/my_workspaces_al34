@@ -1,0 +1,60 @@
+package fr.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import fr.entity.Candidat;
+
+
+@WebServlet("/GenericServlet")
+public class GenericServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public GenericServlet() {
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String provenance = request.getServletPath();
+		HttpSession session = request.getSession();
+		
+		if (provenance.equals("/index.jsp")) {
+			List<String> cours = new ArrayList<String>();
+			cours.add("Java");
+			cours.add("Struts");
+			cours.add("Jee");
+			cours.add("Uml");
+			cours.add("Xml");
+			cours.add("Angular");
+			
+			session.setAttribute("lesCours", cours);
+			getServletContext().getRequestDispatcher("/saisie.jsp").forward(request, response);
+		} else if (provenance.equals("/deSaisie.toto")) {
+			String nom = request.getParameter("nom");
+			session.setAttribute("nom", nom);
+			getServletContext().getRequestDispatcher("/affiche.jsp").forward(request, response);
+		} else if (provenance.equals("/deAffiche.toto")) {
+			String nom = (String) session.getAttribute("nom");
+			
+			// TODO
+			Candidat candidat = new Candidat(nom, null, null, null);
+			System.out.println(candidat.getNom());
+			session.setAttribute("candidat", candidat);
+			getServletContext().getRequestDispatcher("/candidat.jsp").forward(request, response);
+		}
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

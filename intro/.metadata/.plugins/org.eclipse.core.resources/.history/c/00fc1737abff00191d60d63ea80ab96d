@@ -1,0 +1,30 @@
+package fr.afcepf.al34.demo.exeptions;
+
+public class ExempleExeptions {
+
+	public static void main(String[] args) {
+		System.out.println("Début");
+		
+		try {
+			plop();			
+		} catch (Exception e) {
+			System.out.println("OUPS : " + e.getMessage());
+			System.out.println("--------Stack trace--------");
+			e.printStackTrace(System.out);
+			System.out.println("--------Stack trace--------");
+			System.out.println(e.getStackTrace());
+		}
+		
+		System.out.println("Fin");
+	}
+	
+	public static void plop() {
+		plip(0);
+	}
+	
+	public static int plip(int x) {
+		int result = 42 / x;
+		return result;
+	}
+
+}

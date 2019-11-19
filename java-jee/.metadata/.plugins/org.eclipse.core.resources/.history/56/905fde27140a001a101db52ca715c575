@@ -1,0 +1,24 @@
+package fr.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class ActionSaisie implements Action {
+
+	@Override
+	public String queFaire(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("nom");
+		
+		session.setAttribute("nom", nom);
+		session.setAttribute("prenom", prenom);
+		getServletContext().getRequestDispatcher("/affiche.jsp").forward(request, response);
+		return null;
+	}
+
+}

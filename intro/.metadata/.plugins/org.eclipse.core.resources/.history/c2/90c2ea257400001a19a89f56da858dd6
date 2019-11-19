@@ -1,0 +1,51 @@
+package fr.afcepf.al34;
+
+public class Vehicle {
+
+	private String color;
+	private int length;
+	private int width;
+	private int speed;
+
+
+	public void start() {
+
+	}
+
+	public void moveForward() {
+		speed++;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public int getLength() {
+		return length;
+	}
+
+	public void setLength(int length) {
+		this.length = length;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
+	}
+
+}

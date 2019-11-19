@@ -1,0 +1,41 @@
+package fr.afcepf.al34.authenticator.tester;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import fr.afcepf.al34.authenticator.AuthenticationManager;
+import fr.afcepf.al34.authenticator.Credentials;
+import fr.afcepf.al34.authenticator.exceptions.AuthenticationException;
+
+public class Test {
+
+	private static Logger logger = LogManager.getLogger();
+	
+	public static void main(String[] args) {
+		Credentials c1 = new Credentials("toto");
+		
+		try {
+			AuthenticationManager.initializeCredentials("soleil", c1);
+			AuthenticationManager.authenticate("solel", c1);
+			AuthenticationManager.authenticate("solel", c1);
+			AuthenticationManager.authenticate("soleil", c1);
+			
+		} catch (AuthenticationException e) {
+			logger.error(e.getMessage() + " login : " + e.getLogin());
+		}
+		/*
+		System.out.println("______________________________");
+		
+		Credentials c2 = new Credentials("jane");
+		
+		try {
+			AuthenticationManager.initializeCredentials("lune", c2);
+			AuthenticationManager.authenticate("line", c2);
+			AuthenticationManager.authenticate("lune", c2);			
+		} catch (AuthenticationException e) {
+			logger.error(e.getMessage() + " login : " + e.getLogin());
+		}
+		*/
+	}
+	
+}

@@ -1,0 +1,28 @@
+package fr.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MaServ1 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String l = request.getParameter("leLogin");
+		String p = request.getParameter("lePass");
+		
+		if (l.equals("khaled") && p.equals("boussaba")) {
+			getServletContext().getRequestDispatcher("/page2.jsp").forward(request, response);			
+		} else if(l.isEmpty()) {
+			getServletContext().getRequestDispatcher("/loginVide.jsp").forward(request, response);
+		} else {
+			getServletContext().getRequestDispatcher("/page1.html").forward(request, response);
+		}
+		
+	}
+
+}

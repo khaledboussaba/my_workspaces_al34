@@ -1,0 +1,33 @@
+package fr.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+public class ActionSaisie implements Action {
+
+	@Override
+	public String queFaire(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		coursSuivis
+		ArrayList<String> coursSuivis = request.getAttribute("coursSuivis");
+		
+		for (String string : coursSuivis) {
+			
+		}
+		
+		String nom = request.getParameter("nom");
+		String prenom = request.getParameter("nom");
+		
+		session.setAttribute("nom", nom);
+		session.setAttribute("prenom", prenom);
+		//session.setAttribute("lesCoursSuivis", lesCoursSuivis);
+		return "/affiche.jsp";
+	}
+
+}
