@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15741580016730" configfile="/jsf0/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="120" y="228" id="pf15741673883551" outlinks="pf15741673883552 pf15741674963614" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="success.xhtml" x="540" y="360" id="pf15741673883553" outlinks="pf15741675362206" inlinks="pf15741673883552" path="/success.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="failure.xhtml" x="552" y="144" id="pf15741674963615" inlinks="pf15741674963614" path="/failure.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pageSuivante.xhtml" x="900" y="360" id="pf15741675362207" inlinks="pf15741675362206" path="/pageSuivante.xhtml"/>
+  <links id="pf15741673883552" target="pf15741673883553" source="pf15741673883551" outcome="login" fromaction="#{loginBean.returnAction}"/>
+  <links id="pf15741674963614" target="pf15741674963615" source="pf15741673883551" outcome="login" fromaction="#{loginBean.returnAction}"/>
+  <links id="pf15741675362206" target="pf15741675362207" source="pf15741673883553" outcome="success" fromaction="#{loginBean.autreAction}"/>
+</pageflow:Pageflow>
