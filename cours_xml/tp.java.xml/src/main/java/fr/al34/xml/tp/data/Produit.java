@@ -43,7 +43,7 @@ public class Produit {
 	public String getLabel() {
 		return label;
 	}
-	public void setLabal(String label) {
+	public void setLabel(String label) {
 		this.label = label;
 	}
 	public double getPrix() {

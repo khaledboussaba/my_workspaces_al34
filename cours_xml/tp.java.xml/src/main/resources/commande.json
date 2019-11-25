@@ -1,0 +1,17 @@
+{
+	"num": 1,
+	"date": "2019-11-22",
+	"adresse": "adresse de livraison qui va bien pour le tp",
+	"produits": [
+		{
+			"ref": "p1",
+			"label": "gomme",
+			"prix": 2.3
+		},
+		{
+			"ref": "p2",
+			"label": "cahier",
+			"prix": 3.3
+		}
+	]
+}

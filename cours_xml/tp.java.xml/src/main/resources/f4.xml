@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<commande xmlns="http://www.example.org/commande" xmlns:ns2="http://www.example.org/produit" num="1" date="2019-11-22">
+    <adresse>ADRESSE DE LIVRAISON QUI VA BIEN POUR LE TP</adresse>
+    <ns2:produit ref="p1">
+        <ns2:label>gomme</ns2:label>
+        <ns2:prix>2.3</ns2:prix>
+    </ns2:produit>
+    <ns2:produit ref="p2">
+        <ns2:label>cahier</ns2:label>
+        <ns2:prix>3.3</ns2:prix>
+    </ns2:produit>
+</commande>
