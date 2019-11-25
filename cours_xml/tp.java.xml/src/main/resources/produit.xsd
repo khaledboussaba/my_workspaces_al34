@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/produit" 
+xmlns:tns="http://www.example.org/produit" 
+elementFormDefault="qualified">
+
+   <element name="produit" type="tns:Produit" />
+ 
+   <complexType name="Produit">
+		<all>
+			<element name="label" type="string"/>
+			<element name="prix" type="decimal"  />
+			<element name="caracteristique" type="string" minOccurs="0"/>
+		</all>
+		<attribute name="ref" type="string" use="required" />
+  </complexType>
+
+</schema>

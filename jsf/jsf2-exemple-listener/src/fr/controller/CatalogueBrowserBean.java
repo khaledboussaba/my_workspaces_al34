@@ -49,14 +49,15 @@ public class CatalogueBrowserBean implements Serializable {
 		return catalogue.getArticles().get(index);
 	}
 	
-	public void ajouterArticlePanier(Article article) {
-		panier.ajouterArticle(article);
+	public void ajouterArticle(Article article) {
+		panier.ajouterArticlePanier(article);
 		int nb = 0;
 		for (LigneCommande l : panier.getLigneCommandes()) {
 			nb += l.getQuantite();
 		}
 		nbArticles = nb;
 	}
+
 
 	public int getIndex() {
 		return index;

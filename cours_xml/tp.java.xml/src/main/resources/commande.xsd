@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/commande" 
+xmlns:tns="http://www.example.org/commande" 
+xmlns:nsp="http://www.example.org/produit" 
+elementFormDefault="qualified">
+   <import namespace="http://www.example.org/produit" schemaLocation="produit.xsd" />
+
+   <element name="commande" type="tns:Commande" />
+ 
+   <complexType name="Commande">
+		<sequence>
+			<element name="adresse" type="string"/>
+			<element ref="nsp:produit" maxOccurs="unbounded" />
+		</sequence>
+		<attribute name="num" type="positiveInteger" use="required" />
+		<attribute name="date" type="date" use="required" />
+  </complexType>
+
+</schema>

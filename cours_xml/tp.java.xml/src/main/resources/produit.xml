@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produit ref="p1"
+    xmlns="http://www.example.org/produit"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.example.org/produit produit.xsd">
+   <label>gomme</label>
+   <prix>2.3</prix>
+</produit>

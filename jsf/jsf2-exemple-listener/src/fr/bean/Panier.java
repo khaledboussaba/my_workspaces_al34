@@ -23,7 +23,7 @@ public class Panier implements Serializable {
 		this.ligneCommandes = ligneCommandes;
 	}
 
-	public void ajouterArticle(Article article) {
+	public void ajouterArticlePanier(Article article) {
 		System.out.println("Ajout");
 		boolean doublant = false;
 		

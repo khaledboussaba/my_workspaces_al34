@@ -8,7 +8,8 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 	</head>
 	<body>
-		<h1>Les Articles</h1>
+		
+		<center><h3>Liste des articles</h3></center>
 
 		<h:form>
 
@@ -33,16 +34,13 @@
 					</tbody>
 				</table>
 				<h:commandButton style="margin-left: 21em;" actionListener="#{catalogueBrowserBean.processPreviousAction}" value="Précédent" />&#160;
-				<h:commandButton actionListener="#{catalogueBrowserBean.ajouterArticlePanier(catalogueBrowserBean.articleByIndex())}" value="Ajouter au panier" />&#160;
+				<h:commandButton actionListener="#{catalogueBrowserBean.ajouterArticle(catalogueBrowserBean.articleByIndex())}" value="Ajouter au panier" />&#160;
 				<h:commandButton actionListener="#{catalogueBrowserBean.processNextAction}" value="Suivant" />
 		</div>
 		
-		
-		<h3>Mon Panier</h3>
-		
-		
 		<p>Vous avez #{catalogueBrowserBean.nbArticles} dans votre panier</p>
 		
+		<center><h3>Mon Panier</h3></center>		
 		
 		
 		<p>#{catalogueBrowserBean.panier.getLigneCommandes()}</p>

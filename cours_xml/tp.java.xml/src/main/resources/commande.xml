@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commande num="1" date="2019-11-22"
+    xmlns="http://www.example.org/commande"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.example.org/commande commande.xsd">
+  <adresse>adresse de livraison qui va bien pour le tp</adresse>
+
+	<produit ref="p1"  xmlns="http://www.example.org/produit">
+	   <label>gomme</label>
+	   <prix>2.3</prix>
+	</produit>
+	
+	<produit ref="p2"  xmlns="http://www.example.org/produit">
+	   <label>cahier</label>
+	   <prix>3.3</prix>
+	</produit>
+	
+</commande>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/produit" 
+xmlns:tns="http://www.example.org/produit" 
+elementFormDefault="qualified">
+
+   <xsd:element name="produit" type="tns:Produit" />
+ 
+   <xsd:complexType name="Produit">
+		<xsd:all>
+			<xsd:element name="label" type="xsd:string" />
+			<xsd:element name="prix" type="xsd:decimal" />
+		</xsd:all>
+		<xsd:attribute name="ref" type="xsd:string" use="required" />
+  </xsd:complexType>
+
+</xsd:schema>

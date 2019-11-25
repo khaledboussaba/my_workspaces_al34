@@ -1,0 +1,31 @@
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:element name="personne" type="persType" />
+    
+<xsd:complexType name="persType">
+		<xsd:sequence>
+			<xsd:element name="nom" type="xsd:string"/>
+			<xsd:element name="prenom" type="xsd:string" maxOccurs="3" />
+			<xsd:element name="adresse" type="adrType" />
+		</xsd:sequence>
+		<xsd:attribute name="age" type="myLitteInteger" use="optional" />
+</xsd:complexType>
+
+<xsd:simpleType name="myLitteInteger"> 
+    <xsd:restriction base="xsd:positiveInteger"> 
+         <xsd:maxInclusive value="149"/> 
+   </xsd:restriction> 
+</xsd:simpleType> 
+
+<xsd:complexType name="adrType">
+		<xsd:sequence>
+			<xsd:element name="rue" type="xsd:string"/>
+			<xsd:element name="cp" type="xsd:string"  />
+			<xsd:element name="ville" type="xsd:string" />
+			<xsd:element name="pays" type="xsd:string" minOccurs="0" />
+		</xsd:sequence>		
+</xsd:complexType>				
+				
+	
+</xsd:schema>
