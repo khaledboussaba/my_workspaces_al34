@@ -12,7 +12,7 @@ import fr.afcepf.al34.appX.entity.User;
 @Singleton
 /*
 @TransactionManagement(TransactionManagementType.CONTAINER) -> c'est par défaut
-trasaction géré automatiquement par le conteneur d'EJB (partie de JBoss) 
+trasaction géré automatiquement par le conteneur d'EJB (partie de JBoss)
  */
 /*
 @TransactionAttribute(TransactionAttributeType.REQUIRED) -> c'est par défaut
