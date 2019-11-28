@@ -28,7 +28,7 @@ public class BackBeanUser implements Serializable {
 	public String addUser() {
 		// TODO
 		System.out.println("nouveau user ajouté : " + user.getLogin());
-		//users.add(user);
+		users.add(user);
 		return "/signup.xhtml";
 	}
 	
