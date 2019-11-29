@@ -1,0 +1,80 @@
+package tp.ioc;
+
+import javax.sql.DataSource;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import tp.dao.ProduitDao;
+import tp.dao.ProduitDaoJdbc;
+import tp.ds.MyParamDataSource;
+
+/*
+ * Singleton , Ioc App Config , 
+ * Factory of ProduitDao , DataSource , ...
+ */
+
+//public class FabriqueEtendueGlobale {
+public class MySimpleJavaConfigIOC {
+	
+	private static Logger logger = LoggerFactory.getLogger(MySimpleJavaConfigIOC.class);
+	
+	private static MySimpleJavaConfigIOC uniqueInstance = null;
+	
+	public synchronized static MySimpleJavaConfigIOC getInstance()
+	{
+		if(uniqueInstance==null)
+		{
+			uniqueInstance=new MySimpleJavaConfigIOC();
+		}
+		return uniqueInstance;
+	}
+	
+	private MySimpleJavaConfigIOC()	{
+		super();
+	}
+	
+	//création et initialisation sur demande 
+	//d'un (sous-)composant quelquefois nécessaire en arrière plan:
+	public DataSource createDataSource(){
+		DataSource ds = null;
+		
+		//myDs = new tp.ds.MyJndiDataSource();
+		//...+.setJndiName("...");
+		
+		MyParamDataSource myParamDs = new tp.ds.MyParamDataSource();
+		myParamDs.setJdbcDriver("org.h2.Driver");
+		myParamDs.setDbUrl("jdbc:h2:~/test_designPatterns_db");
+		myParamDs.setUsername("sa");
+		myParamDs.setPassword("");
+		ds = myParamDs;
+		return ds;
+	}
+	
+	// IOC / injection de dépendances
+	public ProduitDao createProduitDaoWithSubComponents()	{
+		// 1. créer le premier élément de la chaine:
+		ProduitDao dao =null;
+		
+		//NB: SWITCH of new TO TEST IOC Configuration
+		
+		//dao = new tp.dao.ProduitDaoSimu();
+		dao = new tp.dao.ProduitDaoJdbc();
+		//dao = new tp.dao.ProduitDaoJpa();
+		
+		
+		logger.info("dao type : " + dao.getClass().getSimpleName());
+		
+		// 2. créer si nécessaire les éléments en arrière plan
+		if(dao!=null && dao instanceof ProduitDaoJdbc){	
+			DataSource myDs = this.createDataSource();
+			logger.info("dataSource type : " + myDs.getClass().getSimpleName());
+			
+			//3 . injecter les éléments les uns dans les autres
+			((ProduitDaoJdbc)dao).setDataSource(myDs);
+		}
+		//4. retourner le premier element de la chaine construite
+		return dao;
+	}
+
+}

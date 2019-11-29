@@ -1,0 +1,45 @@
+<beans>
+<!-- NB: ce fichier de configuration XML/IOC
+     reprend volontairement la meme syntaxe que Spring (sur l'essentiel) 
+     à savoir id="idUniqueComp"
+     et ref="idComposant_a_injecter" -->
+
+<bean id="myDs" class="tp.ds.MyParamDataSource">
+    <property name="jdbcDriver" value="org.h2.Driver" />
+    <property name="dbUrl" value="jdbc:h2:~/test_designPatterns_db" />
+    <property name="username" value="sa" />
+    <property name="password" value="" />
+</bean>
+
+<bean id="myDs" class="tp.ds.MyParamDataSource">
+    <property name="jdbcDriver" value="org.h2.Driver" />
+    <property name="dbUrl" value="jdbc:h2:~/test_designPatterns_db" />
+    <property name="username" value="sa" />
+    <property name="password" value="" />
+</bean>
+
+<!-- 
+<bean id="produitDao" class="tp.dao.ProduitDaoSimu">
+</bean>
+-->
+
+<bean id="produitDaoJpa" class="tp.dao.ProduitDaoJpa">
+</bean>
+
+
+<bean id="produitDao" class="tp.dao.ProduitDaoJdbc">
+    <property name="dataSource" ref="myDs" />
+</bean>
+
+<bean id="serviceGestionProduits" class="tp.service.GestionProduitsImpl">
+    <property name="produitDao" ref="produitDao" /> 
+    <!-- <property name="produitDao" ref="produitDaoJpa" /> -->
+</bean>
+
+<bean id="serviceGestionTva" class="tp.service.GestionTvaImpl">
+</bean>
+
+<bean id="serviceGestionConversion" class="tp.service.GestionConvImpl">
+</bean>
+
+</beans>

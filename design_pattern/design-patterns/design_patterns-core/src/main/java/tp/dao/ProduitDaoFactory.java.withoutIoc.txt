@@ -1,0 +1,65 @@
+package tp.dao;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import tp.util.MyPropertiesUtil;
+
+/*
+ * Singleton
+ * Factory of ProduitDao
+ */
+public class ProduitDaoFactory {
+	
+	private static Logger logger = LoggerFactory.getLogger(ProduitDaoFactory.class);
+	
+	private static ProduitDaoFactory uniqueInstance = null;
+	
+	public synchronized static ProduitDaoFactory getInstance()	{
+		if(uniqueInstance==null){
+			uniqueInstance=new ProduitDaoFactory();
+			logger.debug("uniqueInstance=" + uniqueInstance.toString());
+		}
+		return uniqueInstance;
+	}
+	
+	private String commonData; //shared inside singleton (with get/set)
+	
+	
+	private ProduitDaoFactory()	{
+		super();
+	}
+	
+	public ProduitDao createProduitDao(){
+		ProduitDao dao =null;
+		String daoImplClassName 
+		    = MyPropertiesUtil.propertyValueFromEntryOfPropertyFile("produitDao.properties","produitDao");
+		try {
+			logger.info("daoImplClassName="+daoImplClassName);
+			/*
+			if(daoImplClassName.equals("tp.dao.ProduitDaoSimu") )
+				dao = new tp.dao.ProduitDaoSimu();
+			else if(daoImplClassName.equals("tp.dao.ProduitDaoJdbc") )
+				dao = new tp.dao.ProduitDaoJdbc();
+			else if(daoImplClassName.equals("tp.dao.ProduitDaoJpa") )
+				dao = new tp.dao.ProduitDaoJpa();
+			*/
+			dao = (ProduitDao) Class.forName(daoImplClassName).newInstance();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dao;
+	}
+
+	public String getCommonData() {
+		return commonData;
+	}
+
+	public void setCommonData(String commonData) {
+		this.commonData = commonData;
+	}
+	
+	
+
+}

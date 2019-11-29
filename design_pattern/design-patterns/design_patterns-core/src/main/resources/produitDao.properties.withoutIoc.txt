@@ -1,0 +1,3 @@
+#produitDao=tp.dao.ProduitDaoSimu
+produitDao=tp.dao.ProduitDaoJdbc
+#produitDao=tp.dao.ProduitDaoJpa

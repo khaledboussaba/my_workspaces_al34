@@ -1,0 +1,6 @@
+11:39:14.973 [main] INFO  fr.logger.GoodLogger - essai log
+12:25:35.639 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+12:26:21.805 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+12:27:37.348 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+12:27:37.348 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+12:27:37.348 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
