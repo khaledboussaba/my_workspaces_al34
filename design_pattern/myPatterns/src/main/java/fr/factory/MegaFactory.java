@@ -24,14 +24,14 @@ public class MegaFactory {
 		return uniqueInstance;
 	}
 
-	private MegaFactory() {
+	protected MegaFactory() {
 		super();
 	}
 
 	public Calculateur createCalculateur() {
 		Calculateur calculateur = null;
 		if(calculateurImplClassName == null) {
-			calculateurImplClassName = MyPropertiesUtil.propertyValueFromEntryOfPropertyFile("megaFactory.properties","calculateur");
+			calculateurImplClassName = MyPropertiesUtil.propertyValueFromEntryOfPropertyFile("megaFactory.properties","fr.calculateur.Calculateur");
 		}
 		try {
 			calculateur = (Calculateur) Class.forName(calculateurImplClassName).newInstance();
@@ -44,7 +44,7 @@ public class MegaFactory {
 	public MyLogger createLogger() {
 		MyLogger mylogger =null;
 		if(myloggerImplClassName == null) {
-			myloggerImplClassName = MyPropertiesUtil.propertyValueFromEntryOfPropertyFile("megaFactory.properties","myLogger");
+			myloggerImplClassName = MyPropertiesUtil.propertyValueFromEntryOfPropertyFile("megaFactory.properties","fr.logger.MyLogger");
 		}
 		try {
 			mylogger = (MyLogger) Class.forName(myloggerImplClassName).newInstance();
@@ -52,6 +52,18 @@ public class MegaFactory {
 			e.printStackTrace();
 		} 
 		return mylogger;
+	}
+	
+	//exemple d'appel de la methode create() : MegaFactory.getInstance().create(Calculateur.class)
+	public <T> T create(Class<T> interfaceType) {
+		T instance =null;
+		String implClassName = MyPropertiesUtil.propertyValueFromEntryOfPropertyFile("megaFactory.properties",interfaceType.getName());
+		try {
+			instance = (T) Class.forName(implClassName).newInstance();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		return instance;
 	}
 
 }

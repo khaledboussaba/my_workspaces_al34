@@ -8,7 +8,7 @@
        </Console> 
     </Appenders> 
     <Loggers> 
-        <Logger name="fr" level="DEBUG"  additivity="false"> 
+        <Logger name="fr" level="TRACE"  additivity="false"> 
             <AppenderRef ref="FILE"/>
             <AppenderRef ref="Console"/> 
         </Logger> 

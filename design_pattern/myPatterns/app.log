@@ -4,3 +4,54 @@
 12:27:37.348 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
 12:27:37.348 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
 12:27:37.348 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+14:07:15.511 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+14:07:15.511 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+14:07:15.511 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+14:17:24.166 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+14:17:43.921 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+14:17:43.921 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+14:17:43.921 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+14:18:48.790 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+14:18:48.790 [main] INFO  fr.logger.GoodLogger - essai log
+14:18:48.790 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+14:18:48.790 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+14:19:08.831 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+14:19:08.847 [main] INFO  fr.logger.GoodLogger - essai log
+14:19:17.256 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+14:19:17.256 [main] INFO  fr.logger.GoodLogger - essai log
+14:19:17.256 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+14:19:17.256 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+15:02:04.588 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:02:04.603 [main] INFO  fr.logger.GoodLogger - essai log
+15:02:04.603 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+15:02:04.603 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+15:02:51.354 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:05:35.864 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:05:35.864 [main] INFO  fr.logger.GoodLogger - essai log
+15:05:35.864 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+15:05:35.864 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+15:06:08.989 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:06:08.989 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+15:06:08.989 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+15:06:37.924 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:06:37.940 [main] TRACE fr.factory.MegaFactoryAvecInjection - injection au sein de fr.calculateur.CalculateurAvecLog
+15:06:37.940 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+15:06:37.940 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+15:11:39.957 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:11:39.957 [main] TRACE fr.factory.MegaFactoryAvecInjection - injection au sein de fr.calculateur.CalculateurAvecLog
+15:11:39.957 [main] TRACE fr.factory.MegaFactoryAvecInjection - 	 attribut =  myLogger
+15:11:39.957 [main] TRACE fr.factory.MegaFactoryAvecInjection - 	 attribut =  commentaireQuiVaBien
+15:11:39.972 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+15:11:39.972 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+15:13:42.779 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:13:42.779 [main] TRACE fr.factory.MegaFactoryAvecInjection - injection au sein de fr.calculateur.CalculateurAvecLog
+15:13:42.779 [main] TRACE fr.factory.MegaFactoryAvecInjection - 	 attribut =  myLogger de type interface fr.logger.MyLogger
+15:13:42.779 [main] TRACE fr.factory.MegaFactoryAvecInjection - 	 attribut =  commentaireQuiVaBien de type class java.lang.String
+15:13:42.779 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+15:13:42.779 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
+15:14:04.665 [main] DEBUG fr.factory.MegaFactory - uniqueInstance:fr.factory.MegaFactory@6043cd28
+15:14:04.665 [main] TRACE fr.factory.MegaFactoryAvecInjection - injection au sein de fr.calculateur.CalculateurAvecLog
+15:14:04.665 [main] TRACE fr.factory.MegaFactoryAvecInjection - 	 attribut =  myLogger de type MyLogger
+15:14:04.665 [main] TRACE fr.factory.MegaFactoryAvecInjection - 	 attribut =  commentaireQuiVaBien de type String
+15:14:04.680 [main] INFO  fr.logger.GoodLogger - addition(5,6)=11
+15:14:04.680 [main] INFO  fr.logger.GoodLogger - multiplication(5,6)=30
