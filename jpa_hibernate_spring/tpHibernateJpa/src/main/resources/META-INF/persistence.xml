@@ -1,0 +1,72 @@
+<!-- <persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0"> -->
+	
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence 
+ http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+  
+	<persistence-unit name="myPersistenceUnit"
+		transaction-type="RESOURCE_LOCAL">
+<!-- with JNDI lookup inside JBoss App Serv -->
+<!-- <jta-data-source>java:/DefaultDS</jta-data-source> -->
+
+
+<!--  NB: les eventuels fichiers ".orm" permettent soit de remplacer les annotations @Id, @Column
+         soit de redefinir d'autres valeurs (que celles par defaut precisees par les annotations) -->
+
+     <!-- 
+        <mapping-file>META-INF/orm/devise.orm.xml</mapping-file>
+        <mapping-file>META-INF/orm/pays.orm.xml</mapping-file>
+     -->
+	
+	    <!-- <provider>org.hibernate.ejb.HibernatePersistence</provider> -->
+		<!-- <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
+	    <!-- may be replace by jpaVendor in spring xml or java config -->
+		
+		
+		<class>tp.data.entity.Devise</class>
+		<class>tp.data.entity.Pays</class>
+		<class>tp.data.entity.Compte</class>
+		<class>tp.data.entity.FilmV1</class>
+		<class>tp.data.entity.FilmV2</class>
+		
+		<properties>
+		    <property name="javax.persistence.provider" value="org.hibernate.jpa.HibernatePersistenceProvider" />
+			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" /> -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />  
+			
+			<!-- pour version "directe" sans Spring ni EJB seulement:  -->
+			<!--
+			 <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/devise_db" />         
+             <property name="javax.persistence.jdbc.password" value="root" />        
+             <property name="javax.persistence.jdbc.user" value="root" /> 
+              --> 
+              <!-- 
+             <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+             <property name="javax.persistence.jdbc.user" value="sa"/>
+             <property name="javax.persistence.jdbc.password" value=""/>
+             <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/devise_db"/>
+             -->
+             
+             <!-- Configuring Connection Pool with org.hibernate:hibernate-c3p0:4.3.6.Final in pom.xml -->
+             <!-- 
+			<property name="hibernate.c3p0.min_size" value="5" />
+ 			<property name="hibernate.c3p0.max_size" value="20" />
+			<property name="hibernate.c3p0.timeout" value="500" />
+			<property name="hibernate.c3p0.max_statements" value="50" />
+			<property name="hibernate.c3p0.idle_test_period" value="2000" />
+			-->
+              
+			 
+			<!-- <property name="hibernate.hbm2ddl.auto" value="none" /> -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
+	 		<!-- <property name="hibernate.hbm2ddl.auto" value="update" /> -->
+	 </properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" 
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm 
+                 http://java.sun.com/xml/ns/persistence/orm_2_0.xsd" 
+                 version="2.0">
+
+<package>tp.data.entity</package>
+
+<entity class="Devise" access="FIELD">
+    	<table name="Devise"/>
+        <attributes>            
+            <id name="codeDevise" >
+                  <column name="codeDevise" length="8"/>
+                  <!--  <generated-value strategy="AUTO"/> -->
+            </id>
+            <basic name="monnaie">
+                <column name="monnaie" length="64"/>
+            </basic>
+            <basic name="change">
+                <column name="dChange" length="64"/> 
+            </basic>
+        </attributes>    
+</entity>
+</entity-mappings>

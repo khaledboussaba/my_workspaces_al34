@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- 
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+-->
+<!-- 
+<hibernate-mapping package="tp.data.entity"
+    xmlns="http://www.hibernate.org/xsd/hibernate-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.hibernate.org/xsd/hibernate-mapping
+        http://www.hibernate.org/xsd/hibernate-mapping/hibernate-mapping-4.0.xsd">
+-->
+ 
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="tp.data.entity.Devise" table="Devise">
+		<id name="codeDevise" >
+			<column name="codeDevise" not-null="true" />			
+		</id>
+		<property name="monnaie" />
+		<property name="change" >
+		    <column name="dChange" />
+		</property>
+		
+	</class>
+</hibernate-mapping>
