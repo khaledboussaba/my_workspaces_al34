@@ -52,7 +52,8 @@ public class TestDaoFilm {
 		
 		Assert.assertTrue(films.size() >= 2);
 		
-		Film filmBRelu = filmDao.findById(filmB.getIdFilm());
+		//Film filmBRelu = filmDao.findById(filmB.getIdFilm());
+		Film filmBRelu = filmDao.findFilmByIdWithProducteur(filmB.getIdFilm());
 		System.out.println("filBRelu = " + filmBRelu);
 		
 		for (Producteur pr : filmBRelu.getProducteurs()) {

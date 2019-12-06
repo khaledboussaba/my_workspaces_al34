@@ -50,5 +50,13 @@ public class FilmDaoJpa implements FilmDao {
 		return em.createNamedQuery("Film.findByTitre", Film.class).setParameter("titreQueJeRecherche", titre).getResultList();
 	}
 
+	@Override
+	public Film findFilmByIdWithProducteur(Long idFilm) {
+		Film f = findById(idFilm);
+		for (Producteur p : f.getProducteurs()) {
+			//TODO : boucle for pour remonter les éléments du collection Lazy
+		}
+		return f;
+	}
 
 }
