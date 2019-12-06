@@ -1,10 +1,13 @@
 package tp.entity;
 
-import javax.persistence.Column;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -13,31 +16,32 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter @Setter @NoArgsConstructor
 @Entity
-@Table(name = "acteur")
+@Table(name = "producteur")
+@Getter @Setter @NoArgsConstructor
 @NamedQueries({
-	@NamedQuery(name = "Acteur.findAll", query = "SELECT a FROM Acteur a")
+	@NamedQuery(name = "Producteur.findAll", query = "SELECT p FROM Producteur p")
 })
-public class Acteur {
-
+public class Producteur {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_acteur")
-	private Long idActeur;
-	
+	private Long idProducteur;
 	private String nom;
 	private String prenom;
 	
-	public Acteur(String nom, String prenom) {
+	@ManyToMany(fetch = FetchType.LAZY,mappedBy = "producteurs")
+	private List<Film> films;
+	
+	public Producteur(String nom, String prenom) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Acteur [idActeur=" + idActeur + ", nom=" + nom + ", prenom=" + prenom + "]";
+		return "Producteur [idProducteur=" + idProducteur + ", nom=" + nom + ", prenom=" + prenom + "]";
 	}
 	
 }

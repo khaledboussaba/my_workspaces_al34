@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import tp.entity.Film;
+import tp.entity.Producteur;
 
 @Repository
 @Transactional
@@ -48,5 +49,6 @@ public class FilmDaoJpa implements FilmDao {
 	public List<Film> findByTitre(String titre) {
 		return em.createNamedQuery("Film.findByTitre", Film.class).setParameter("titreQueJeRecherche", titre).getResultList();
 	}
+
 
 }
