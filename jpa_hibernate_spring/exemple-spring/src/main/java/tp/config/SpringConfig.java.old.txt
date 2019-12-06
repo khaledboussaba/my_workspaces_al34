@@ -1,0 +1,22 @@
+package tp.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+import tp.dao.CompteDao;
+import tp.dao.CompteDaoSimu;
+
+//Exemple de configuration Spring java explicite (remplaçant ancienne config xml)
+
+@Configuration
+@ComponentScan("tp.service")
+public class SpringConfig {
+	
+	@Bean// default id/name = method Name (ici compteDaoSimu)
+	//equivalent à <bean id="compteDaoSimu" class="tp.dao.CompteDaoSimu" />
+	public CompteDao compteDaoSimu() {
+		return new CompteDaoSimu();
+	}
+	
+}
