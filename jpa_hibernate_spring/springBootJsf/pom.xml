@@ -37,14 +37,17 @@
 			<optional>true</optional>
 		</dependency>
 		
-        <dependency>
-            <groupId>org.joinfaces</groupId>
-            <artifactId>jsf-spring-boot-starter</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<!-- utile pour class WelcomePageRedirect implements WebMvcConfigurer  
+			     et pour event WS REST -->
+		</dependency>
         
          <dependency>
             <groupId>org.joinfaces</groupId>
             <artifactId>primefaces-spring-boot-starter</artifactId>
+            <!-- et indirectement jsf-spring-boot-starter  -->
         </dependency>
         
         <dependency>
@@ -68,9 +71,10 @@
             <plugins>
                 <plugin>
                     <groupId>org.joinfaces</groupId>
+                    <!--  ????? -->
                     <artifactId>joinfaces-maven-plugin</artifactId>
                     <version>${joinfaces.version}</version>
-                  <!-- 
+                   <!-- 
                     <executions>
                         <execution>
                             <goals>
