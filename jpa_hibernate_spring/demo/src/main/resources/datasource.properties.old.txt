@@ -1,0 +1,5 @@
+#sans spring boot
+jdbc.driver=com.mysql.cj.jdbc.Driver
+db.url=jdbc:mysql://localhost/minibankdb
+db.username=root
+db.password=root

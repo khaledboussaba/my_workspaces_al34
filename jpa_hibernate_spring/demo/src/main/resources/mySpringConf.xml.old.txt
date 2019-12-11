@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd" >
+
+<!--  V1 : config 100% XML sans annotation -->
+<!-- 
+<bean id="blagueDaoImpl" class="fr.afcepf.al34.demo.dao.BlagueDaoImpl"> 
+</bean>
+
+<bean id="blagueServiceImpl" 
+      class="fr.afcepf.al34.demo.business.BlagueServiceImpl">
+      <property name="blagueDao" ref="blagueDaoImpl" />
+</bean>
+-->
+<!--  V2 : config XML avec annotation , depuis Spring 2.5 / 2007 environ -->
+<context:annotation-config/>
+<context:component-scan base-package="fr.afcepf.al34.demo"></context:component-scan>
+
+<!--  la classe prédéfinie  DriverManagerDataSource de Spring
+      est une implémentation simple de l'interface javax.sql.DataSource
+      et sert à établir une connexion jdbc -->
+<bean id="myDataSource"
+	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+	<property name="url" value="jdbc:mysql://localhost/minibankdb" />
+	<property name="username" value="mydbuser" />
+	<property name="password" value="mypwd" />
+</bean>
+
+</beans>
