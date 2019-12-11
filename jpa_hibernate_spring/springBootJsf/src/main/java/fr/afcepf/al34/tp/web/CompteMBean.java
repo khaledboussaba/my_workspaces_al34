@@ -27,7 +27,7 @@ public class CompteMBean {
 	
 	@PostConstruct
 	public void init() {
-		this.comptes = this.compteService.rechercherTousLesComptes();
+		//this.comptes = this.compteService.rechercherTousLesComptes();
 	}
 	
 	public String doRecupComptesDuClient() {
