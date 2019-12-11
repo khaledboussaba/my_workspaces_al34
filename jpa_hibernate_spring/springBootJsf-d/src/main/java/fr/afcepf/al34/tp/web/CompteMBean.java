@@ -23,16 +23,15 @@ public class CompteMBean {
 	@Inject //ou @Autowired
 	private CompteService compteService;
 	
-	private List<Compte> comptes; //à afficher dans h:dataTable
-	
+	private List<Compte> comptes;//à afficher dans h:dataTable
+
 	@PostConstruct
 	public void init() {
-		this.comptes = this.compteService.rechercherTousLesComptes();
+		//this.comptes = this.compteService.rechercherTousLesComptes();
 	}
 	
 	public String doRecupComptesDuClient() {
 		this.comptes = this.compteService.comptesDuClient(this.numClient);
 		return "comptes.xhtml";
 	}
-	
 }

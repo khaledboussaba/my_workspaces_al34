@@ -24,15 +24,23 @@ public class InitDataSet {
 	
 	@PostConstruct
 	public void initJeuxDeDonneesQueJaime() {
-		compteService.sauvegarderCompte(new Compte("Compte A", 100.11));
-		compteService.sauvegarderCompte(new Compte("Compte B", 200.22));
-		compteService.sauvegarderCompte(new Compte("Compte C", 300.33));
-		compteService.sauvegarderCompte(new Compte("Compte D", 400.44));
+		Client client1 = clientService.sauvegarderClient(new Client("TOTO", "toto"));
+		Client client2 = clientService.sauvegarderClient(new Client("TATA", "tata"));
 		
-		clientService.sauvegarderCompte(new Client("TOTO", "toto"));
-		clientService.sauvegarderCompte(new Client("TATA", "tata"));
-		clientService.sauvegarderCompte(new Client("TITI", "titi"));
-		clientService.sauvegarderCompte(new Client("TUTU", "tutu"));
+		Compte cA = new Compte("Compte A", 100.11);
+		cA.setClient(client1);
+		compteService.sauvegarderCompte(cA);
+		Compte cB = new Compte("Compte B", 200.22);
+		cB.setClient(client1);
+		compteService.sauvegarderCompte(cB);
+		
+		Compte cC = new Compte("Compte C", 300.33);
+		cC.setClient(client2);
+		compteService.sauvegarderCompte(cC);
+		Compte cD = new Compte("Compte D", 400.44);
+		cD.setClient(client2);
+		compteService.sauvegarderCompte(cD);		
+		
 	}
 
 }

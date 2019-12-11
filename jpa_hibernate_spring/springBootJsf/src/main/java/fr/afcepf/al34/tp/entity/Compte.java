@@ -1,5 +1,7 @@
 package fr.afcepf.al34.tp.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,8 +20,9 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor
 @Entity
 @Table(name="compte")
-public class Compte {
-
+public class Compte implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "numero_compte")
@@ -27,7 +30,7 @@ public class Compte {
 	private String label;
 	private Double solde;
 
-	@ManyToOne()
+	@ManyToOne
 	@JoinColumn(name="num_client") //nom de la colonne clef etrangère qui va référencer un client dans la table Compte
 	@JsonIgnore
 	private Client client;
@@ -36,6 +39,7 @@ public class Compte {
 		this.label = label;
 		this.solde = solde;
 	}
+	
 
 	@Override
 	public String toString() {

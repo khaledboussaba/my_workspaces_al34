@@ -1,0 +1,49 @@
+package fr.afcepf.al34.tp.web;
+
+import javax.annotation.ManagedBean;
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+
+import fr.afcepf.al34.tp.service.CompteService;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@ManagedBean
+@RequestScoped
+@Getter @Setter @NoArgsConstructor
+public class VirementMBean {
+	
+	private Long numCptDeb;
+	private Long numCptCred;
+	private Double montant;
+	
+	private String message = "";
+	
+	@Inject
+	private CompteService compteService;
+	
+	@Inject //ou @Autowired
+	private CompteMBean compteMBean;
+	
+	@PostConstruct
+	public void init() {
+		
+	}
+	
+	public String doVirement() {
+		//TODO
+		String suite=null;
+		try {
+			compteService.transferer(numCptDeb, numCptCred, montant);
+			suite = compteMBean.doRecupComptesDuClient();
+			// suite = "comptes.xhtml"; //naviguer vers liste des comptes à jour
+		} catch (Exception e) {
+			e.printStackTrace();
+			this.message=e.getMessage();
+		}
+		return suite;
+	}
+	
+}

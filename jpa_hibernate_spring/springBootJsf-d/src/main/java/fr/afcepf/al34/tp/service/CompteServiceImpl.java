@@ -12,8 +12,8 @@ import fr.afcepf.al34.tp.entity.Compte;
 @Service //heritant de @Component
 @Transactional
 public class CompteServiceImpl implements CompteService {
-
-	@Autowired // ou @Inject
+	
+	@Autowired //ou @Inject
 	private CompteDao compteDao;
 
 	@Override

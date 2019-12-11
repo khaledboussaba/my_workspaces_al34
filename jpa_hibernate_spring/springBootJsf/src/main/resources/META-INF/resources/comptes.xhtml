@@ -20,6 +20,12 @@
 			<f:facet name="header">Solde</f:facet>
 			<h:outputText value="#{cpt.solde}" />
 		</h:column>
+		<h:column>
+			<f:facet name="header">Numéro client</f:facet>
+			<h:outputText value="#{cpt.client.numero}" />
+		</h:column>
 	</h:dataTable>
+	<a href="virement.xhtml">Nouveau virement</a>
+	<a href="index.html">retour index.html</a><br/>
 </h:body>
 </html>
