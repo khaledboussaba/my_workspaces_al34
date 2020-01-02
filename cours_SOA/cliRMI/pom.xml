@@ -2,14 +2,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>fr.al34</groupId>
+	<groupId>fr.afcepf.al34</groupId>
 	<artifactId>cliRMI</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
 			<!-- ou mieux encore itfRmi: "ventuel 3eme projet maven avec interfaces distantes -->
-			<groupId>fr.al34</groupId>
+			<groupId>fr.afcepf.al34</groupId>
 			<artifactId>servRMI</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
