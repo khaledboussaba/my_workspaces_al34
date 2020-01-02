@@ -31,3 +31,5 @@ public class CalculTvaImpl implements ICalculTva {
 	}
 
 }
+//http://localhost:8080/servEjb/CalculTvaImpl?wsdl dans le naviagteur
+//le service soap peut etre tester avec le logiciel SoapUI
