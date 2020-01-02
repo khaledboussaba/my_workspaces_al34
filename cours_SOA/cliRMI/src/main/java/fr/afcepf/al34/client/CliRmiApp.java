@@ -1,16 +1,16 @@
-package fr.al34.client;
+package fr.afcepf.al34.client;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
-import fr.al34.itf.ICalculTva;
+import fr.afcepf.al34.itf.ICalculTva;
 
 public class CliRmiApp {
 
 	public static void main(String[] args) {
 
 		try {
-			String machineServeur = "localhost"; //ou 192.168.xx.YY
+			String machineServeur = "192.168.102.183"; //ou 192.168.xx.YY
 			Registry registry = LocateRegistry.getRegistry(machineServeur, 1099);
 			String nomLogiqueCalculateur = "calculateurTva";
 			ICalculTva proxyCalculateurTva = (ICalculTva) registry.lookup(nomLogiqueCalculateur);

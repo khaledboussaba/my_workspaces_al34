@@ -1,4 +1,4 @@
-package fr.al34.itf;
+package fr.afcepf.al34.itf;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

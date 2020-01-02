@@ -1,9 +1,9 @@
-package fr.al34.serveur;
+package fr.afcepf.al34.serveur;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-import fr.al34.itf.ICalculTva;
+import fr.afcepf.al34.itf.ICalculTva;
 
 public class CalculTvaImpl extends UnicastRemoteObject implements ICalculTva {
 	private static final long serialVersionUID = -5295667554668187960L;

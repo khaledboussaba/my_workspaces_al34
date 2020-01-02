@@ -1,4 +1,4 @@
-package fr.al34.serveur;
+package fr.afcepf.al34.serveur;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
