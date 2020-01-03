@@ -11,7 +11,8 @@ public class ClientSoapApp {
 	public static void main(String[] args) {
 		try {
 			//URL wsdlUrl = new URL("http://localhost:8080/servEjb/CalculTvaImpl?wsdl");
-			// Le serveur jboss accepte des requetes autres que localhost si l'option -b 0.0.0.0 précisée au lancement du serveur (depuis eclipse ou pas)
+			// Le serveur jboss accepte des requetes autres que localhost si l'option -b 0.0.0.0 
+			// est précisée au lancement du serveur (depuis eclipse ou pas)
 			URL wsdlUrl = new URL("http://192.168.102.183:8080/servEjb/CalculTvaImpl?wsdl");
 			
 			ICalculTva proxyWSTva = (new CalculTvaImplService(wsdlUrl)).getCalculTvaImplPort();
