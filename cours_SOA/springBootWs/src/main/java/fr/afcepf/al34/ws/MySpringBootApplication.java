@@ -1,4 +1,4 @@
-package springBootWsfr.afcepf.al34.ws;
+package fr.afcepf.al34.ws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
