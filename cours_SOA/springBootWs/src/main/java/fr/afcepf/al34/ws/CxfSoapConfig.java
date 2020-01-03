@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ImportResource;
 import fr.afcepf.al34.ws.service.ICalculTva;
 
 
+
 @Configuration
 @EnableAutoConfiguration
 @ImportResource({ "classpath:META-INF/cxf/cxf.xml" })
