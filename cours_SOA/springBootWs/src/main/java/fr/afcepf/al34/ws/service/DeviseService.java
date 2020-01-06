@@ -12,5 +12,6 @@ public interface DeviseService {
 	Devise sauvegarderDevise(Devise devise);
 	void supprimerDevise(String code);
 	//...
+	List<Devise> rechercherToutesDevises();
 	
 }

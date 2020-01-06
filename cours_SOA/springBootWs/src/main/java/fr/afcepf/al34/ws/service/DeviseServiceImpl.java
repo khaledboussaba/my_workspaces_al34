@@ -36,4 +36,9 @@ public class DeviseServiceImpl implements DeviseService {
 		deviseDao.deleteById(code);
 	}
 
+	@Override
+	public List<Devise> rechercherToutesDevises() {
+		return (List<Devise>) deviseDao.findAll();
+	}
+
 }
