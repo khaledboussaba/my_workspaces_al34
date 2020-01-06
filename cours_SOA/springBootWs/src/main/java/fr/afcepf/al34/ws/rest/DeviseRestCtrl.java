@@ -3,6 +3,8 @@ package fr.afcepf.al34.ws.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,9 +53,21 @@ public class DeviseRestCtrl {
 	
 	// mode DELETE: http://localhost:8080/springBootWsApp/devise-api/public/devise/JPY
 	// a tester avec le logiciel PostMan ou un equivalent
+//	@DeleteMapping(value = "/{codeDevise}")
+//	public void deleteDeviseByCode(@PathVariable("codeDevise") String code) {
+//		deviseService.supprimerDevise(code);
+//	}
+	
 	@DeleteMapping(value = "/{codeDevise}")
-	public void deleteDeviseByCode(@PathVariable("codeDevise") String code) {
-		deviseService.supprimerDevise(code);
+	public ResponseEntity<?> deleteDeviseByCode(@PathVariable("codeDevise") String code) {
+		try {
+			deviseService.supprimerDevise(code);
+			return new ResponseEntity<String>("suppression bien effectuée", HttpStatus.OK); //suppression bien effectuée
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<String>("pas trouvé ce qu'il faut supprimer", HttpStatus.NOT_FOUND); // pas trouvé ce qu'il faut supprimer
+			//return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); //erreur quelconque
+		}
 	}
 
 }
