@@ -55,14 +55,14 @@ public class DeviseRestCtrl {
 	
 	// mode DELETE: http://localhost:8080/springBootWsApp/devise-api/public/devise/JPY
 	// a tester avec le logiciel PostMan ou un equivalent
-/*
+/*  V1
 	@DeleteMapping(value = "/{codeDevise}")
 	public void deleteDeviseByCode(@PathVariable("codeDevise") String code) {
 		deviseService.supprimerDevise(code);
 	}
 */
 
-/*	
+/*	V2
 	@DeleteMapping(value = "/{codeDevise}")
 	public ResponseEntity<?> deleteDeviseByCode(@PathVariable("codeDevise") String code) {
 		try {
@@ -75,9 +75,23 @@ public class DeviseRestCtrl {
 		}
 	}
 */	
+/* V3 
 	@DeleteMapping(value = "/{codeDevise}")
 	public void deleteDeviseByCode(@PathVariable("codeDevise") String code) throws MyEntityNotFoundException {
 		deviseService.supprimerDevise(code); // renvoi code 404 en cas d'erreur grace a l'annotation @ResponseStatus(HttpStatus.NOT_FOUND) dans la classe MyEntityNotFoundException
+	}
+*/
+	
+/*	V4 version avec IDEMPOTENCE (retour toujours au même format)  */
+	@DeleteMapping(value = "/{codeDevise}")
+	public ResponseEntity<String> deleteDeviseByCode(@PathVariable("codeDevise") String code) {
+		try {
+			deviseService.supprimerDevise(code);
+			return new ResponseEntity<String>("suppression bien effectuée", HttpStatus.OK); //suppression bien effectuée
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<String>("devise déja supprimée ou inexistante", HttpStatus.OK); // pas trouvé ce qu'il faut supprimer
+		}
 	}
 
 }
