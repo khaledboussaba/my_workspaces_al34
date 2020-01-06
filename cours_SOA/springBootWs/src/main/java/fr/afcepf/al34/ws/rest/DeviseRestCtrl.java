@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.afcepf.al34.ws.entity.Devise;
+import fr.afcepf.al34.ws.exception.MyEntityNotFoundException;
 import fr.afcepf.al34.ws.service.DeviseService;
 
 @RestController
@@ -53,11 +55,14 @@ public class DeviseRestCtrl {
 	
 	// mode DELETE: http://localhost:8080/springBootWsApp/devise-api/public/devise/JPY
 	// a tester avec le logiciel PostMan ou un equivalent
-//	@DeleteMapping(value = "/{codeDevise}")
-//	public void deleteDeviseByCode(@PathVariable("codeDevise") String code) {
-//		deviseService.supprimerDevise(code);
-//	}
-	
+/*
+	@DeleteMapping(value = "/{codeDevise}")
+	public void deleteDeviseByCode(@PathVariable("codeDevise") String code) {
+		deviseService.supprimerDevise(code);
+	}
+*/
+
+/*	
 	@DeleteMapping(value = "/{codeDevise}")
 	public ResponseEntity<?> deleteDeviseByCode(@PathVariable("codeDevise") String code) {
 		try {
@@ -68,6 +73,11 @@ public class DeviseRestCtrl {
 			return new ResponseEntity<String>("pas trouvé ce qu'il faut supprimer", HttpStatus.NOT_FOUND); // pas trouvé ce qu'il faut supprimer
 			//return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); //erreur quelconque
 		}
+	}
+*/	
+	@DeleteMapping(value = "/{codeDevise}")
+	public void deleteDeviseByCode(@PathVariable("codeDevise") String code) throws MyEntityNotFoundException {
+		deviseService.supprimerDevise(code); // renvoi code 404 en cas d'erreur grace a l'annotation @ResponseStatus(HttpStatus.NOT_FOUND) dans la classe MyEntityNotFoundException
 	}
 
 }

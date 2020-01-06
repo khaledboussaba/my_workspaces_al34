@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.afcepf.al34.ws.dao.DeviseDao;
 import fr.afcepf.al34.ws.entity.Devise;
+import fr.afcepf.al34.ws.exception.MyEntityNotFoundException;
 
 @Service
 @Transactional
@@ -32,8 +33,12 @@ public class DeviseServiceImpl implements DeviseService {
 	}
 
 	@Override
-	public void supprimerDevise(String code) {
-		deviseDao.deleteById(code);
+	public void supprimerDevise(String code) throws MyEntityNotFoundException {
+		try {
+			deviseDao.deleteById(code);
+		} catch (Exception e) {
+			throw new MyEntityNotFoundException("Echec suppression avec code = " + code + " !!!", e);
+		}
 	}
 
 	@Override
