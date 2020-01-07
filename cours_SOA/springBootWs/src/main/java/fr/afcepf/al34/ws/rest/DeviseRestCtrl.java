@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.afcepf.al34.ws.dto.ResDelete;
 import fr.afcepf.al34.ws.entity.Devise;
 import fr.afcepf.al34.ws.exception.MyEntityNotFoundException;
 import fr.afcepf.al34.ws.service.DeviseService;
@@ -82,7 +83,7 @@ public class DeviseRestCtrl {
 	}
 */
 	
-/*	V4 version avec IDEMPOTENCE (retour toujours au même format)  */
+/*	V4 version avec IDEMPOTENCE (retour toujours au même format)  
 	@DeleteMapping(value = "/{codeDevise}")
 	public ResponseEntity<String> deleteDeviseByCode(@PathVariable("codeDevise") String code) {
 		try {
@@ -91,6 +92,18 @@ public class DeviseRestCtrl {
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new ResponseEntity<String>("devise déja supprimée ou inexistante", HttpStatus.OK); // pas trouvé ce qu'il faut supprimer
+		}
+	}
+*/	
+	/*	V5 */
+	@DeleteMapping(value = "/{codeDevise}")
+	public ResponseEntity<ResDelete> deleteDeviseByCode(@PathVariable("codeDevise") String code) {
+		try {
+			deviseService.supprimerDevise(code);
+			return new ResponseEntity<ResDelete>(new ResDelete("suppression bien effectuée"), HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return new ResponseEntity<ResDelete>(new ResDelete("devise déja supprimée ou inexistante"), HttpStatus.OK);
 		}
 	}
 
