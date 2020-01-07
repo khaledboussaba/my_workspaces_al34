@@ -1,5 +1,6 @@
 package fr.afcepf.al34.ws.cli.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -21,20 +22,20 @@ public class DeviseServiceDelegate implements IDeviseService {
 
 	@Override
 	public List<DeviseDto> getAllDevises() {
-		// TODO Auto-generated method stub
-		return null;
+		DeviseDto[] tabDevises = null;
+		tabDevises = restTemplate.getForObject(BASE_URL, DeviseDto[].class);
+		return Arrays.asList(tabDevises);
 	}
 
 	@Override
 	public DeviseDto postDevise(DeviseDto devise) {
-		// TODO Auto-generated method stub
-		return null;
+		return restTemplate.postForObject(BASE_URL, devise, DeviseDto.class);
 	}
 
 	@Override
 	public void deleteDevise(String code) {
-		// TODO Auto-generated method stub
-
+		String url = BASE_URL + "/" + code;
+		restTemplate.delete(url);
 	}
 
 }

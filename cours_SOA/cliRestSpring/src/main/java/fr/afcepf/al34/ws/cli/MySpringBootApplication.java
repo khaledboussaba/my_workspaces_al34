@@ -1,5 +1,7 @@
 package fr.afcepf.al34.ws.cli;
 
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -38,6 +40,18 @@ public class MySpringBootApplication extends SpringBootServletInitializer {
 		IDeviseService deviseServiceDelegate = contextSpring.getBean(IDeviseService.class);
 		DeviseDto deviseEur = deviseServiceDelegate.getDeviseByCode("EUR");
 		System.out.println("deviseEur = " + deviseEur);
+		
+		DeviseDto nouvelleDevise = new DeviseDto("sc", "Super Credit", 0.02);
+		DeviseDto deviseSauvegardee = deviseServiceDelegate.postDevise(nouvelleDevise);
+		System.out.println("deviseSauvegardee = " + deviseSauvegardee);
+		
+		List<DeviseDto> listDevises = deviseServiceDelegate.getAllDevises();
+		System.out.println("listDevises = " +listDevises);
+		
+		deviseServiceDelegate.deleteDevise("sc");
+		//verif suppression
+		DeviseDto deviseScSuprimee = deviseServiceDelegate.getDeviseByCode("sc");
+		System.out.println("deviseSuprimee = " + deviseScSuprimee);
 	}
 	
 }
