@@ -2,10 +2,12 @@ package fr.afcepf.al34.ws.cli.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import fr.afcepf.al34.ws.cli.dto.DeviseDto;
 
+@Service //composant spring de type "business service" (codé localement ou par délégation)
 public class DeviseServiceDelegate implements IDeviseService {
 	
 	private RestTemplate restTemplate = new RestTemplate();
