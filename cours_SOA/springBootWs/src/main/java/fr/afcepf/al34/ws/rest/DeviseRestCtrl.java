@@ -2,6 +2,8 @@ package fr.afcepf.al34.ws.rest;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,7 +52,7 @@ public class DeviseRestCtrl {
 	// dans la partie body (invisible) de la requete entrante HTTP
 	// a tester avec le logiciel PostMan ou un equivalent
 	@PostMapping(value = "")
-	public Devise postDevise(@RequestBody Devise devise) {
+	public Devise postDevise(@Valid @RequestBody Devise devise) {
 		return deviseService.sauvegarderDevise(devise);
 	}
 	
