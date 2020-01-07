@@ -12,7 +12,14 @@ window.onload=function() {
 }
 
 function callbackGererResultat(texteReponse) {
-	divRes.innerHTML = texteReponse;
+	//divRes.innerHTML = texteReponse;
+	var listeDevisesJs = JSON.parse(texteReponse);
+	var htmlListeDevises = "<ul>";
+	for(i=0; i< listeDevisesJs.length; i++) {
+		htmlListeDevises = htmlListeDevises + "<li>" + listeDevisesJs[i].name + " , " + listeDevisesJs[i].change + "</li>"; 
+	}
+	htmlListeDevises = htmlListeDevises + "</ul>";
+	divRes.innerHTML = htmlListeDevises;
 }
 
 function makeAjaxGetRequest(url, callback) {
