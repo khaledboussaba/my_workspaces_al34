@@ -13,7 +13,7 @@ public class MySpringBootApplication extends SpringBootServletInitializer {
 		SpringApplication app = new SpringApplication(MySpringBootApplication.class);
 		app.setAdditionalProfiles("initData", "swagger");
 		ConfigurableApplicationContext context = app.run(args);
-		System.out.println("http://localhost:8080/springBootWsApp");
+		System.out.println("http://localhost:8383/springBootWsApp");
 		
 	}
 	
