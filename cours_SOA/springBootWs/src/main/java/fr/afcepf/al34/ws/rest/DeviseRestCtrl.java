@@ -22,9 +22,11 @@ import fr.afcepf.al34.ws.dto.ResDelete;
 import fr.afcepf.al34.ws.entity.Devise;
 import fr.afcepf.al34.ws.exception.MyEntityNotFoundException;
 import fr.afcepf.al34.ws.service.DeviseService;
+import io.swagger.annotations.Api;
 
 @RestController
 @RequestMapping(value = "/devise-api/public/devise", headers = "Accept=application/json")
+@Api(tags = { "My REST Devise api (partie public)" })
 public class DeviseRestCtrl {
 
 	@Autowired

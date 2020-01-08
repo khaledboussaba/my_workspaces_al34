@@ -7,12 +7,16 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
+
+    @Autowired
+    private MyNoAuthenticationEntryPoint unauthorizedHandler;
 
     @Autowired
     public void globalUserDetails(final AuthenticationManagerBuilder auth) throws Exception {
@@ -41,16 +45,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/**/*.html",
                 "/**/*.css",
                 "/**/*.js").permitAll()
-    	.antMatchers("/rest/**").permitAll()
-    	.antMatchers("/mvc/**").permitAll()
+    	.antMatchers("/devise-api/public/**").permitAll()
+    	.antMatchers("/devise-api/private/**").authenticated()
 		//.anyRequest().authenticated()
 		.and().formLogin().permitAll()
 		.and().cors() //enable CORS (avec @CrossOrigin sur class @RestController)
-		.and().csrf().disable();
-		
-		//.and().httpBasic() 
+		.and().csrf().disable()
+    	// If the user is not authenticated, returns 401
+    	.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+    	// This is a stateless application, disable sessions
+    	.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); //.and()
+    	// Custom filter for authenticating users using tokens
+    	//.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+    				
+    	//.and().httpBasic() 
 		
     }
+    
     
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
