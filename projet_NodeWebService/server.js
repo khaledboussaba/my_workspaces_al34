@@ -1,6 +1,14 @@
 var express = require('express');
 var app = express();
 
+// CORS enabled with express/node-js :
+app.use(function(req, res, next) {
+ res.header("Access-Control-Allow-Origin", "*");
+ //ou avec "www.xyz.com" à la place de "*" en production
+ res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
+ next();
+});
+
 // GET http://localhost:8585/essai1
 app.get('/essai1', (req, res, next) => {
   var objData = {
