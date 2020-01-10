@@ -31,6 +31,30 @@ app.get('/api-banque/tauxInteretCourant', (req, res, next) => {
   res.send(objDataRes);
 });
 
+
+// GET http://localhost:8686/api-banque/fraisDossier?montant=28900
+app.get('/api-banque/fraisDossier', (req, res, next) => {
+  var montant = Number(req.query.montant);
+  var fraisDossier;
+
+  if (montant < 25000) {
+    fraisDossier = 200;
+  }
+  if (montant >= 25000 && montant < 100000) {
+    fraisDossier = 400;
+  }
+  if (montant >= 100000) {
+    fraisDossier = 800;
+  }
+
+  var objDataRes = {
+    montant : montant,
+    fraisDossier : fraisDossier,
+  };
+  res.send(objDataRes);
+});
+
+
 app.listen(8686, () => {
   console.log('http://localhost:8686');
 });
