@@ -20,7 +20,7 @@ import com.formation.bootdocker.entity.Article;
 import com.formation.bootdocker.service.IArticleService;
 
 @Controller
-@RequestMapping("user")
+@RequestMapping("/user")
 public class ArticleController {
 
 	@Autowired
