@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.formation.springbootMangodb.dao.CustomerRepository;
-import com.formation.springbootMangodb.entity.Customer;
+import com.formation.springbootMangodb.entity.Person;
 
 @SpringBootApplication
 public class SpringbootMangodbApplication implements CommandLineRunner {
@@ -24,13 +24,13 @@ public class SpringbootMangodbApplication implements CommandLineRunner {
 		repository.deleteAll();
 
 		// save a couple of customers
-		repository.save(new Customer("Alice", "Smith"));
-		repository.save(new Customer("Bob", "Smith"));
+		repository.save(new Person("Alice", "Smith"));
+		repository.save(new Person("Bob", "Smith"));
 
 		// fetch all customers
 		System.out.println("Customers found with findAll():");
 		System.out.println("-------------------------------");
-		for (Customer customer : repository.findAll()) {
+		for (Person customer : repository.findAll()) {
 			System.out.println(customer);
 		}
 		System.out.println();
@@ -42,7 +42,7 @@ public class SpringbootMangodbApplication implements CommandLineRunner {
 
 		System.out.println("Customers found with findByLastName('Smith'):");
 		System.out.println("--------------------------------");
-		for (Customer customer : repository.findByLastName("Smith")) {
+		for (Person customer : repository.findByLastName("Smith")) {
 			System.out.println(customer);
 		}
 

@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.formation.springbootMangodb.entity.Customer;
+import com.formation.springbootMangodb.entity.Person;
 
-public interface CustomerRepository extends MongoRepository<Customer, String> {
+public interface CustomerRepository extends MongoRepository<Person, String> {
 
-	public Customer findByFirstName(String firstName);
-	public List<Customer> findByLastName(String lastName);
+	public Person findByFirstName(String firstName);
+	public List<Person> findByLastName(String lastName);
 
 }

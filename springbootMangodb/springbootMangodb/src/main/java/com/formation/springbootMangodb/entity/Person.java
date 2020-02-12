@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter @Setter @NoArgsConstructor
-public class Customer {
+public class Person {
 
   @Id
   private String id;
@@ -15,7 +15,7 @@ public class Customer {
   private String firstName;
   private String lastName;
 
-  public Customer(String firstName, String lastName) {
+  public Person(String firstName, String lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
